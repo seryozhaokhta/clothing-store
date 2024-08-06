@@ -1,0 +1,28 @@
+// src/router/index.js
+
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '../pages/HomePage.vue'
+import CatalogPage from '../pages/CatalogPage.vue'
+import ProductPage from '../pages/ProductPage.vue'
+import CartPage from '../pages/CartPage.vue'
+import CheckoutPage from '../pages/CheckoutPage.vue'
+import AboutPage from '../pages/AboutPage.vue'
+import ContactPage from '../pages/ContactPage.vue'
+
+const routes = [
+  { path: '/', name: 'Home', component: HomePage },
+  { path: '/catalog', name: 'Catalog', component: CatalogPage },
+  { path: '/product/:id', name: 'Product', component: ProductPage },
+  { path: '/cart', name: 'Cart', component: CartPage },
+  { path: '/checkout', name: 'Checkout', component: CheckoutPage },
+  { path: '/about', name: 'About', component: AboutPage },
+  { path: '/contact', name: 'Contact', component: ContactPage }
+  // добавим другие маршруты позже
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+export default router
