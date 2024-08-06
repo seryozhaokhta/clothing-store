@@ -157,8 +157,6 @@ button img {
 }
 
 .burger-menu {
-  width: 30px;
-  height: 24px;
   position: relative;
   cursor: pointer;
   margin-right: 10px;
@@ -189,7 +187,7 @@ button img {
 }
 
 .burger-menu-open.line-1 {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 6px);
 }
 
 .burger-menu-open.line-2 {
@@ -197,7 +195,7 @@ button img {
 }
 
 .burger-menu-open.line-3 {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 @media (max-width: 768px) {
@@ -213,4 +211,3 @@ button img {
     display: none;
   }
 }
-

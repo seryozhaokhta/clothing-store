@@ -5,6 +5,7 @@
         <div class="left-section">
             <router-link class="home-link" to="/">
                 <img src="@/assets/header/home.svg" alt="Home" />
+                <span>{{ $t('home') }}</span>
             </router-link>
         </div>
         <nav class="center-section navigation-links-container">
@@ -61,6 +62,9 @@
                             RU
                         </button>
                     </div>
+                    <button class="theme-toggle drawer-theme-toggle" @click="toggleTheme">
+                        <img :src="themeIcon" alt="Theme Toggle" />
+                    </button>
                 </li>
             </ul>
         </div>

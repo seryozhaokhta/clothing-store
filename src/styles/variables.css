@@ -1,7 +1,7 @@
 /* src/styles/variables.css */
 
 :root {
-  --background-color: hsla(0, 0%, 100%, 1);
+  --background-color: hsla(0, 0%, 95.5%, 1);
   --text-color: hsla(0, 0%, 0%, 1);
   --header-background: hsla(0, 0%, 63%, 1);
   --header-text-color: hsla(0, 0%, 20%, 1);
