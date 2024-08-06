@@ -4,7 +4,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
   en: {
-    welcome: 'Welcome to Clothing Store',
+    welcome: 'Gabriel store',
     home: 'Home',
     catalog: 'Catalog',
     cart: 'Cart',
@@ -14,7 +14,7 @@ const messages = {
     product: 'Product'
   },
   ru: {
-    welcome: 'Добро пожаловать в Магазин Одежды',
+    welcome: 'Магазин Габриель',
     home: 'Главная',
     catalog: 'Каталог',
     cart: 'Корзина',
@@ -26,9 +26,9 @@ const messages = {
 }
 
 const i18n = createI18n({
-  locale: 'en', // текущий язык
-  fallbackLocale: 'en', // резервный язык
-  messages // наши переводы
+  locale: 'en',
+  fallbackLocale: 'ru',
+  messages
 })
 
 export default i18n

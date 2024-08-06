@@ -1,0 +1,166 @@
+/* src/styles/header.css */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+}
+
+.navigation-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-links li {
+  margin: 0 10px;
+}
+
+.navigation-links li a {
+  color: var(--header-text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation-links li a:hover {
+  text-decoration: underline;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--header-text-color);
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+}
+
+.language-toggle {
+  position: relative;
+  display: flex;
+  background-color: var(--language-switcher-background);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.highlight {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  background-color: var(--highlight-background);
+  border-radius: 12px;
+  transition:
+    left 0.3s ease,
+    width 0.3s ease;
+  z-index: 0;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.language-button.active {
+  color: var(--language-active-color);
+  font-weight: bold;
+}
+
+.language-button:not(.active) {
+  color: var(--language-inactive-color);
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  width: 200px;
+  height: 100vh;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.drawer-links {
+  list-style: none;
+  padding: 20px;
+}
+
+.drawer-links li {
+  margin-bottom: 10px;
+}
+
+.drawer-links li a {
+  color: var(--header-text-color);
+  text-decoration: none;
+}
+
+.drawer-links li a:hover {
+  text-decoration: underline;
+}
+
+.burger-menu {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burger-menu div,
+.burger-menu div::before,
+.burger-menu div::after {
+  content: '';
+  width: 30px;
+  height: 4px;
+  background-color: var(--header-text-color);
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.burger-menu div::before {
+  top: -8px;
+}
+
+.burger-menu div::after {
+  top: 8px;
+}
+
+.burger-menu-open {
+  background: transparent;
+}
+
+.burger-menu-open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.burger-menu-open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}

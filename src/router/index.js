@@ -17,7 +17,6 @@ const routes = [
   { path: '/checkout', name: 'Checkout', component: CheckoutPage },
   { path: '/about', name: 'About', component: AboutPage },
   { path: '/contact', name: 'Contact', component: ContactPage }
-  // добавим другие маршруты позже
 ]
 
 const router = createRouter({

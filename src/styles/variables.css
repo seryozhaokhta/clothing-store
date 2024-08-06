@@ -1,13 +1,27 @@
+/* src/styles/variables.css */
+
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --header-background: #f8f9fa;
-  --header-text-color: #333333;
+  --background-color: hsla(0, 0%, 100%, 1);
+  --text-color: hsla(0, 0%, 0%, 1);
+  --header-background: hsla(0, 0%, 63%, 1);
+  --header-text-color: hsla(0, 0%, 20%, 1);
+
+  --language-switcher-background: hsla(0, 0%, 80%, 1);
+  --highlight-background: hsla(0, 0%, 100%, 1);
+  --language-active-color: hsla(0, 0%, 0%, 1);
+  --language-inactive-color: hsla(0, 0%, 50%, 1);
+
+  --font-family: 'Helvetica', sans-serif;
 }
 
 [data-theme='dark'] {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --header-background: #1f1f1f;
-  --header-text-color: #ffffff;
+  --background-color: hsla(0, 0%, 7%, 1);
+  --text-color: hsla(0, 0%, 100%, 1);
+  --header-background: hsla(0, 0%, 12%, 1);
+  --header-text-color: hsla(0, 0%, 100%, 1);
+
+  --language-switcher-background: hsla(0, 0%, 20%, 1);
+  --highlight-background: hsla(0, 0%, 40%, 1);
+  --language-active-color: hsla(0, 0%, 100%, 1);
+  --language-inactive-color: hsla(0, 0%, 70%, 1);
 }
