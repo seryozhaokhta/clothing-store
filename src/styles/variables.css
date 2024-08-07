@@ -5,6 +5,7 @@
   --text-color: hsla(0, 0%, 0%, 1);
   --header-background: hsla(0, 0%, 63%, 1);
   --header-text-color: hsla(0, 0%, 20%, 1);
+  --text-color-secondary: hsla(0, 0%, 50%, 1);
 
   --language-switcher-background: hsla(0, 0%, 80%, 1);
   --highlight-background: hsla(0, 0%, 100%, 1);
@@ -12,6 +13,12 @@
   --language-inactive-color: hsla(0, 0%, 50%, 1);
 
   --font-family: 'Helvetica', sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 2.5em;
+  --font-size-medium: 1.2em;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
 [data-theme='dark'] {
@@ -19,6 +26,7 @@
   --text-color: hsla(0, 0%, 100%, 1);
   --header-background: hsla(0, 0%, 12%, 1);
   --header-text-color: hsla(0, 0%, 100%, 1);
+  --text-color-secondary: hsla(0, 0%, 70%, 1);
 
   --language-switcher-background: hsla(0, 0%, 20%, 1);
   --highlight-background: hsla(0, 0%, 40%, 1);

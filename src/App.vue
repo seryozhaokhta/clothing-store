@@ -8,9 +8,7 @@
 </template>
 
 <script setup>
-import HeaderComponent from './components/HeaderComponent.vue'; // убедитесь, что путь правильный
+import HeaderComponent from './components/HeaderComponent.vue';
 </script>
 
-<style>
-/* Глобальные стили будут добавлены позже */
-</style>
+<style></style>

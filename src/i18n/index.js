@@ -5,6 +5,7 @@ import { createI18n } from 'vue-i18n'
 const messages = {
   en: {
     welcome: 'Gabriel store',
+    subtitle: 'Discover the latest trends in fashion',
     home: 'Home',
     catalog: 'Catalog',
     cart: 'Cart',
@@ -15,6 +16,7 @@ const messages = {
   },
   ru: {
     welcome: 'Магазин Габриель',
+    subtitle: 'Откройте для себя последние модные тенденции',
     home: 'Главная',
     catalog: 'Каталог',
     cart: 'Корзина',
