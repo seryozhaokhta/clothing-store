@@ -16,3 +16,4 @@ export default {
   about: 'About',
   product: 'Product'
 }
+

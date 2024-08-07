@@ -16,3 +16,4 @@ export default {
   about: 'О нас',
   product: 'Продукт'
 }
+
