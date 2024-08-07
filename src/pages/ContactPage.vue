@@ -28,8 +28,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     nextTick(() => {
-        if (document.querySelector('.contact-section h1')) {
-            gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
+        const contactSectionElements = document.querySelectorAll('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p');
+        const mapContainerElement = document.querySelector('.map-container');
+
+        if (contactSectionElements.length) {
+            gsap.from(contactSectionElements, {
                 opacity: 0,
                 y: 20,
                 duration: 1,
@@ -40,8 +43,8 @@ onMounted(() => {
             console.error('GSAP: target .contact-section h1, .contact-section p, .contact-info h2, .contact-info p not found');
         }
 
-        if (document.querySelector('.map-container')) {
-            gsap.from('.map-container', {
+        if (mapContainerElement) {
+            gsap.from(mapContainerElement, {
                 opacity: 0,
                 scale: 0.9,
                 duration: 1,
