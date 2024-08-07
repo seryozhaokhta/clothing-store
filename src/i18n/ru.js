@@ -8,12 +8,11 @@ export default {
   cart: 'Корзина',
   checkout: 'Оформление заказа',
   contact: 'Контакты',
-  contactSubtitle: 'Свяжитесь с нами',
   contactInfoTitle: 'Контактная информация',
-  contactInfo: 'Телефон: +123456789\nEmail: contact@gabrielstore.com',
+  phone: 'Телефон',
+  email: 'Электронная почта',
   contactParagraph:
     'Не стесняйтесь обращаться к нам по телефону или электронной почте. Мы здесь, чтобы помочь вам с любыми вопросами или проблемами.',
   about: 'О нас',
   product: 'Продукт'
 }
-

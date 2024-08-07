@@ -4,8 +4,12 @@
     <div class="contactpage-container">
         <section class="contact-section">
             <h1>{{ $t('contact') }}</h1>
+            <p>{{ $t('contactParagraph') }}</p>
         </section>
         <section class="contact-info">
+            <h2>{{ $t('contactInfoTitle') }}</h2>
+            <p>{{ $t('phone') }}: +123456789</p>
+            <p>{{ $t('email') }}: contact@gabrielstore.com</p>
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9172881282327!2d127.02860181586624!3d37.497903079808134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3b6c9d8eabf%3A0x69f3a3e15d3e2456!2sGoogle%20Korea!5e0!3m2!1sen!2skr!4v1614177526194!5m2!1sen!2skr"
@@ -24,8 +28,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     nextTick(() => {
-        if (document.querySelector('.contact-section h1')) {
-            gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
+        const contactSection = document.querySelectorAll('.contact-section h1, .contact-section p');
+        const contactInfo = document.querySelectorAll('.contact-info h2, .contact-info p');
+
+        if (contactSection.length) {
+            gsap.from(contactSection, {
                 opacity: 0,
                 y: 20,
                 duration: 1,
@@ -33,11 +40,24 @@ onMounted(() => {
                 stagger: 0.3,
             });
         } else {
-            console.error('GSAP: target .contact-section h1, .contact-section p, .contact-info h2, .contact-info p not found');
+            console.error('GSAP: target .contact-section h1, .contact-section p not found');
         }
 
-        if (document.querySelector('.map-container')) {
-            gsap.from('.map-container', {
+        if (contactInfo.length) {
+            gsap.from(contactInfo, {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                ease: 'power2.out',
+                stagger: 0.3,
+            });
+        } else {
+            console.error('GSAP: target .contact-info h2, .contact-info p not found');
+        }
+
+        const mapContainer = document.querySelector('.map-container');
+        if (mapContainer) {
+            gsap.from(mapContainer, {
                 opacity: 0,
                 scale: 0.9,
                 duration: 1,
