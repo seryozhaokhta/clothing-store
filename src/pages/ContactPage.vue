@@ -2,15 +2,10 @@
 
 <template>
     <div class="contactpage-container">
-        <section class="contact-section">
-            <h1>{{ $t('contact') }}</h1>
-            <p>{{ $t('contactSubtitle') }}</p>
-        </section>
-        <section class="contact-info">
-            <h2>{{ $t('contactInfoTitle') }}</h2>
-            <p>{{ $t('contactInfo') }}</p>
-            <p>{{ $t('contactParagraph') }}</p>
-        </section>
+
+        <h1>{{ $t('contact') }}</h1>
+
+
     </div>
 </template>
 
