@@ -20,32 +20,42 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-    gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        ease: 'power2.out',
-        stagger: 0.3,
-    });
+    nextTick(() => {
+        if (document.querySelector('.contact-section h1')) {
+            gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                ease: 'power2.out',
+                stagger: 0.3,
+            });
+        } else {
+            console.error('GSAP: target .contact-section h1, .contact-section p, .contact-info h2, .contact-info p not found');
+        }
 
-    gsap.from('.map-container', {
-        opacity: 0,
-        scale: 0.9,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '.map-container',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: true,
-        },
+        if (document.querySelector('.map-container')) {
+            gsap.from('.map-container', {
+                opacity: 0,
+                scale: 0.9,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.map-container',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                },
+            });
+        } else {
+            console.error('GSAP: target .map-container not found');
+        }
     });
 });
 </script>
