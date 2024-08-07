@@ -2,23 +2,56 @@
 
 <template>
     <div class="contactpage-container">
-
-        <h1>{{ $t('contact') }}</h1>
-
-
+        <section class="contact-section">
+            <h1>{{ $t('contact') }}</h1>
+        </section>
+        <section class="contact-info">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9172881282327!2d127.02860181586624!3d37.497903079808134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3b6c9d8eabf%3A0x69f3a3e15d3e2456!2sGoogle%20Korea!5e0!3m2!1sen!2skr!4v1614177526194!5m2!1sen!2skr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
     </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, nextTick } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-    const elements = document.querySelectorAll('.contact-section, .contact-info');
-    elements.forEach((element, index) => {
-        setTimeout(() => {
-            element.style.opacity = 1;
-            element.style.transform = 'translateY(0)';
-        }, index * 200);
+    nextTick(() => {
+        if (document.querySelector('.contact-section h1')) {
+            gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                ease: 'power2.out',
+                stagger: 0.3,
+            });
+        } else {
+            console.error('GSAP: target .contact-section h1, .contact-section p, .contact-info h2, .contact-info p not found');
+        }
+
+        if (document.querySelector('.map-container')) {
+            gsap.from('.map-container', {
+                opacity: 0,
+                scale: 0.9,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.map-container',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                },
+            });
+        } else {
+            console.error('GSAP: target .map-container not found');
+        }
     });
 });
 </script>
@@ -32,13 +65,6 @@ onMounted(() => {
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
-}
-
-.contact-section,
-.contact-info {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .contact-section {
@@ -73,5 +99,15 @@ onMounted(() => {
     font-size: var(--font-size-base);
     color: var(--text-color-secondary);
     font-weight: var(--font-weight-light);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 </style>
