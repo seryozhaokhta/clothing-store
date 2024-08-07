@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { gsap } from 'gsap';
 import ImageGallery from '@/components/ImageGallery.vue';
 
 const images = ref([
@@ -20,6 +21,16 @@ const images = ref([
   { id: 3, src: 'path/to/image3.jpg', alt: 'Image 3' },
   { id: 4, src: 'path/to/image4.jpg', alt: 'Image 4' },
 ]);
+
+onMounted(() => {
+  gsap.from('.hero-section h1, .hero-section p', {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: 'power2.out',
+    stagger: 0.3,
+  });
+});
 </script>
 
 <style scoped>
