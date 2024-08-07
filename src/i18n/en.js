@@ -2,8 +2,8 @@
 
 export default {
   welcome: 'Gabriel store',
-  subtitle: 'Discover the latest fashion trends',
   home: 'Home',
+  subtitle: 'Your one-stop shop for fashion',
   catalog: 'Catalog',
   cart: 'Cart',
   checkout: 'Checkout',

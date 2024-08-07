@@ -10,7 +10,7 @@ const messages = {
 }
 
 const i18n = createI18n({
-  locale: 'ru',
+  locale: 'en',
   fallbackLocale: 'ru',
   messages
 })

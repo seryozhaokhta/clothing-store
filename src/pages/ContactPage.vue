@@ -22,6 +22,9 @@
 <script setup>
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     gsap.from('.contact-section h1, .contact-section p, .contact-info h2, .contact-info p', {
