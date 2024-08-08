@@ -33,4 +33,20 @@ defineProps({
     padding: 5px 10px;
     margin: 0 5px;
 }
+
+/* Dark Mode Styles */
+.pagination {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pagination button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pagination button:disabled {
+    color: var(--text-color-secondary);
+}
 </style>
+

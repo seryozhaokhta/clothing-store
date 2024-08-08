@@ -22,7 +22,6 @@ export default {
   socksAndAccessories: 'Чулки и аксессуары',
   eroticLingerie: 'Эротическое бельё',
   forMen: 'Для мужчин',
-  forKids: 'Для детей',
   brands: 'Бренды',
   sale: 'Распродажа',
   filters: 'Фильтры',
@@ -34,6 +33,8 @@ export default {
   applyFilters: 'Применить фильтры',
   search: 'Найти',
   currency: 'RUB',
+  popular: 'Популярное',
+  resetFilter: 'Сбросить фильтр',
   footer: {
     company: 'Компания',
     about: 'О нас',

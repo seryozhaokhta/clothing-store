@@ -31,17 +31,41 @@ function search() {
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .search-bar button {
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
     cursor: pointer;
 }
 
 .search-bar button:hover {
     background-color: #f0f0f0;
 }
+
+/* Dark Mode Styles */
+.search-bar {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.search-bar input {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.search-bar button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.search-bar button:hover {
+    background-color: #f0f0f0;
+}
 </style>
+

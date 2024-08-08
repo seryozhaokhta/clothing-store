@@ -7,6 +7,7 @@
             <p>{{ product.price }} {{ $t('currency') }}</p>
             <div class="tags">
                 <span v-for="tag in product.tags" :key="tag" class="tag">{{ $t(tag) }}</span>
+                <span class="tag">{{ product.brand }}</span>
             </div>
         </div>
         <div class="product-actions">
@@ -35,6 +36,8 @@ defineProps({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .product-info {
@@ -61,5 +64,13 @@ defineProps({
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 12px;
+    color: var(--text-color);
+}
+
+/* Dark Mode Styles */
+.product-card {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 </style>
+

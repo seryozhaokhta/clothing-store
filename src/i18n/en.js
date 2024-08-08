@@ -22,7 +22,6 @@ export default {
   socksAndAccessories: 'Socks and Accessories',
   eroticLingerie: 'Erotic Lingerie',
   forMen: 'For Men',
-  forKids: 'For Kids',
   brands: 'Brands',
   sale: 'Sale',
   filters: 'Filters',
@@ -34,6 +33,8 @@ export default {
   applyFilters: 'Apply Filters',
   search: 'Search',
   currency: 'USD',
+  popular: 'Popular',
+  resetFilter: 'Reset Filter',
   footer: {
     company: 'Company',
     about: 'About Us',
