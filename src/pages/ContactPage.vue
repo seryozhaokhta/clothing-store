@@ -12,8 +12,9 @@
             <p>{{ $t('email') }}: contact@gabrielstore.com</p>
             <div class="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9172881282327!2d127.02860181586624!3d37.497903079808134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3b6c9d8eabf%3A0x69f3a3e15d3e2456!2sGoogle%20Korea!5e0!3m2!1sen!2skr!4v1614177526194!5m2!1sen!2skr"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1110.6206512051435!2d40.47461493054167!3d56.17022147239224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414c7b179b335d2f%3A0xa08027e0d27f33db!2z0JLQvtGB0YLQvtC6LTE!5e0!3m2!1sru!2sge!4v1723028702476!5m2!1sru!2sge"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </div>
