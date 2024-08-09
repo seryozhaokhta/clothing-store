@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="product-actions">
-            <button @click="$emit('addToCart', product)">{{ $t('addToCart') }}</button>
-            <button @click="$emit('toggleFavorite', product)">
+            <button @click="addToCart">{{ $t('addToCart') }}</button>
+            <button @click="toggleFavorite">
                 <span :class="{ 'favorite': product.isFavorite }">❤</span>
             </button>
         </div>
@@ -20,12 +20,26 @@
 </template>
 
 <script setup>
-defineProps({
+import { useCartStore } from '@/stores/cart';
+
+const props = defineProps({
     product: {
         type: Object,
         required: true
     }
 });
+
+const emit = defineEmits(['toggleFavorite']);
+
+const cartStore = useCartStore();
+
+const addToCart = () => {
+    cartStore.addToCart(props.product);
+};
+
+const toggleFavorite = () => {
+    emit('toggleFavorite', props.product.id);
+};
 </script>
 
 <style scoped>
@@ -60,11 +74,11 @@ defineProps({
 }
 
 .tag {
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 12px;
-    color: var(--text-color);
 }
 
 /* Dark Mode Styles */
@@ -73,4 +87,3 @@ defineProps({
     color: var(--text-color);
 }
 </style>
-

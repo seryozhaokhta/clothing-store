@@ -3,8 +3,10 @@
 <template>
     <div>
         <h1>{{ $t('cart') }}</h1>
-        <!-- Список товаров в корзине -->
+        <CartWidget />
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import CartWidget from '@/components/CartWidget.vue';
+</script>

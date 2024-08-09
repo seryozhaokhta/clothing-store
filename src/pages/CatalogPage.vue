@@ -26,6 +26,7 @@ import ProductCard from '@/components/ProductCard.vue';
 import PaginationComponent from '@/components/PaginationComponent.vue';
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import SearchBar from '@/components/SearchBar.vue';
+import { useCartStore } from '@/stores/cart';
 
 const products = ref([
     { id: 1, name: 'Product 1', price: 100, isFavorite: false, category: 'new-arrivals', tags: ['newArrivals', 'popular'], brand: 'Kris line' },
@@ -57,7 +58,8 @@ const products = ref([
     { id: 27, name: 'Product 27', price: 200, isFavorite: false, category: 'swimwear', tags: ['sale'], brand: 'Esotiq' },
     { id: 28, name: 'Product 28', price: 260, isFavorite: false, category: 'socks-and-accessories', tags: [], brand: 'Gorsenia' },
     { id: 29, name: 'Product 29', price: 150, isFavorite: false, category: 'erotic-lingerie', tags: ['popular'], brand: 'Kinga' },
-    { id: 30, name: 'Product 30', price: 280, isFavorite: false, category: 'for-men', tags: ['newArrivals'], brand: 'Ysabel Mora' }
+    { id: 30, name: 'Product 30', price: 280, isFavorite: false, category: 'for-men', tags: ['newArrivals'], brand: 'Ysabel Mora' },
+    { id: 31, name: 'Product 31', price: 220, isFavorite: false, category: 'underwear', tags: ['popular'], brand: 'Jolidon' }
 ]);
 
 const filters = ref({
@@ -66,14 +68,16 @@ const filters = ref({
     priceRange: [0, 1000],
 });
 
-const maxPrice = ref(Math.max(...products.value.map(p => p.price)));
+const maxPrice = ref(Math.max(...products.value.map((p) => p.price)));
 
 const currentPage = ref(1);
 const itemsPerPage = 10;
 
 const filteredProducts = computed(() => {
-    return products.value.filter(product => {
-        const matchesCategory = filters.value.categories.length ? filters.value.categories.includes(product.category) : true;
+    return products.value.filter((product) => {
+        const matchesCategory = filters.value.categories.length
+            ? filters.value.categories.includes(product.category)
+            : true;
         const matchesPrice = product.price >= filters.value.priceRange[0] && product.price <= filters.value.priceRange[1];
         const matchesBrand = filters.value.brands.length ? filters.value.brands.includes(product.brand) : true;
         return matchesCategory && matchesPrice && matchesBrand;
@@ -103,9 +107,13 @@ function resetCategoryFilter() {
     currentPage.value = 1;
 }
 
+const cartStore = useCartStore();
+
 function addToCart(product) {
-    console.log('Add to cart:', product);
+    cartStore.addToCart(product);
+    alert('Товар добавлен в корзину!');
 }
+
 
 function toggleFavorite(product) {
     product.isFavorite = !product.isFavorite;

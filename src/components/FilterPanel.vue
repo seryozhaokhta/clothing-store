@@ -18,6 +18,8 @@
                             value="Kinga" /> Kinga</label></li>
                 <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
                             value="Ysabel Mora" /> Ysabel Mora</label></li>
+                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Jolidon" /> Jolidon</label></li>
             </ul>
         </div>
         <div class="filter-section">

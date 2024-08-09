@@ -49,4 +49,3 @@ defineProps({
     color: var(--text-color-secondary);
 }
 </style>
-
