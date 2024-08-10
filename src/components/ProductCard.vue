@@ -8,6 +8,7 @@
             <div class="tags">
                 <span v-for="tag in product.tags" :key="tag" class="tag">{{ $t(tag) }}</span>
                 <span class="tag">{{ product.brand }}</span>
+                <span v-for="size in product.sizes" :key="size" class="tag">{{ size }}</span>
             </div>
         </div>
         <div class="product-actions">

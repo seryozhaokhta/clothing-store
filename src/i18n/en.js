@@ -46,5 +46,13 @@ export default {
     contact: 'Contact',
     followUs: 'Follow Us',
     rightsReserved: 'All rights reserved.'
+  },
+  aboutSection: {
+    title: 'About Us',
+    history:
+      'Our company was founded with the mission to provide high-quality fashion products at affordable prices. Over the years, we have expanded our product range and now offer a wide selection of items for every taste.',
+    mission:
+      'Our mission is to inspire confidence and self-expression through fashion. We believe that everyone deserves to feel good about what they wear, and we are committed to making fashion accessible to everyone.',
+    team: "Our team is made up of passionate individuals who are dedicated to providing the best shopping experience possible. We are always here to help, and we strive to exceed our customers' expectations every day."
   }
 }

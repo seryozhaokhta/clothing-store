@@ -26,11 +26,19 @@
             <h3>{{ $t('price') }}</h3>
             <Slider v-model="localFilters.priceRange" :min="0" :max="maxPrice" :tooltip="'always'" />
         </div>
+        <div class="filter-section">
+            <h3>{{ $t('size') }}</h3>
+            <ul>
+                <li v-for="size in availableSizes" :key="size"><label><input type="checkbox"
+                            v-model="localFilters.sizes" @change="applyLocalFilters" :value="size" /> {{ size }}</label>
+                </li>
+            </ul>
+        </div>
     </aside>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import '@vueform/slider/themes/default.css';
 import Slider from '@vueform/slider';
 
@@ -42,12 +50,27 @@ const props = defineProps({
     maxPrice: {
         type: Number,
         required: true
+    },
+    currentCategory: {
+        type: String,
+        required: true
     }
 });
 
 const emits = defineEmits(['applyFilters']);
 
 const localFilters = ref({ ...props.filters, priceRange: [0, props.maxPrice] });
+
+const sizesByCategory = {
+    'home-wear': ['S', 'M', 'L', 'XL'],
+    'underwear': ['34', '36', '38', '40', '42'],
+    'swimwear': ['S', 'M', 'L', 'XL'],
+    'socks-and-accessories': ['One Size'],
+    'erotic-lingerie': ['S', 'M', 'L'],
+    'for-men': ['M', 'L', 'XL', 'XXL'],
+};
+
+const availableSizes = computed(() => sizesByCategory[props.currentCategory] || []);
 
 watch(props.filters, (newFilters) => {
     localFilters.value = { ...newFilters, priceRange: [0, props.maxPrice] };

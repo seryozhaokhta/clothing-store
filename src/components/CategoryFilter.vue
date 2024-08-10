@@ -95,4 +95,3 @@ function resetCategoryFilter() {
     color: var(--text-color);
 }
 </style>
-
