@@ -14,13 +14,14 @@
         <div class="product-actions">
             <button @click="addToCart">{{ $t('addToCart') }}</button>
             <button @click="toggleFavorite">
-                <span :class="{ 'favorite': product.isFavorite }">❤</span>
+                <span :class="{ 'favorite': isFavorite }">❤</span>
             </button>
         </div>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { useCartStore } from '@/stores/cart';
 
 const props = defineProps({
@@ -32,6 +33,9 @@ const props = defineProps({
 
 const emit = defineEmits(['toggleFavorite']);
 
+// Локальная переменная для отслеживания состояния избранного
+const isFavorite = ref(props.product.isFavorite);
+
 const cartStore = useCartStore();
 
 const addToCart = () => {
@@ -39,6 +43,19 @@ const addToCart = () => {
 };
 
 const toggleFavorite = () => {
+    isFavorite.value = !isFavorite.value;
+
+    // Избранные товары в `localStorage`
+    const favoriteProducts = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
+    if (isFavorite.value) {
+        favoriteProducts.push(props.product);
+    } else {
+        const index = favoriteProducts.findIndex((item) => item.id === props.product.id);
+        if (index > -1) {
+            favoriteProducts.splice(index, 1);
+        }
+    }
+    localStorage.setItem('favoriteProducts', JSON.stringify(favoriteProducts));
     emit('toggleFavorite', props.product.id);
 };
 </script>

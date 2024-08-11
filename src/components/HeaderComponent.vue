@@ -14,7 +14,7 @@
                 <li><router-link to="/cart">{{ $t('cart') }}</router-link></li>
                 <li><router-link to="/contact">{{ $t('contact') }}</router-link></li>
                 <li><router-link to="/about">{{ $t('about') }}</router-link></li>
-                <li><router-link to="/product">{{ $t('product') }}</router-link></li>
+                <li><router-link to="/profile">{{ $t('profile') }}</router-link></li>
             </ul>
         </nav>
         <div class="burger-menu" @click="toggleDrawer">
@@ -47,7 +47,7 @@
                 <li><router-link @click="closeDrawer" to="/cart">{{ $t('cart') }}</router-link></li>
                 <li><router-link @click="closeDrawer" to="/contact">{{ $t('contact') }}</router-link></li>
                 <li><router-link @click="closeDrawer" to="/about">{{ $t('about') }}</router-link></li>
-                <li><router-link @click="closeDrawer" to="/product">{{ $t('product') }}</router-link></li>
+                <li><router-link @click="closeDrawer" to="/profile">{{ $t('profile') }}</router-link></li>
                 <li class="drawer-locale">
                     <div class="language-toggle">
                         <div class="highlight" :style="highlightStyle"></div>
