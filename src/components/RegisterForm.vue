@@ -25,10 +25,28 @@ const email = ref('');
 const password = ref('');
 const router = useRouter();
 
-const register = () => {
-    localStorage.setItem('user', JSON.stringify({ email: email.value }));
-    router.push('/profile');
-};
+const register = async () => {
+    try {
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email.value, password: password.value })
+        })
+
+        if (!response.ok) {
+            throw new Error('Registration failed')
+        }
+
+        const data = await response.json()
+        alert(data.message)  // Сообщение об успешной регистрации
+        router.push('/login')
+    } catch (error) {
+        console.error('Error:', error)
+        alert('Error registering user')
+    }
+}
 </script>
 
 <style scoped>

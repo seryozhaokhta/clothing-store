@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs')
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  isEmailVerified: { type: Boolean, default: false }, // Поле для проверки email
+  emailVerificationToken: { type: String }, // Токен для верификации email
   createdAt: { type: Date, default: Date.now }
 })
 

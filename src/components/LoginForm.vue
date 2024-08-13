@@ -26,12 +26,27 @@ const email = ref('');
 const password = ref('');
 const router = useRouter();
 
-const login = () => {
-    if (email.value === 'default@example.com' && password.value === 'password') {
-        localStorage.setItem('user', JSON.stringify({ email: email.value }));
-        router.push('/profile');
-    } else {
-        alert('Invalid credentials');
+const login = async () => {
+    try {
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email.value, password: password.value }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem('user', JSON.stringify({ email: email.value, token: data.token }));
+            router.push('/profile');
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error logging in');
     }
 };
 </script>
