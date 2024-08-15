@@ -101,4 +101,40 @@ watch(localFilters, applyLocalFilters, { deep: true });
 .filter-panel label {
     color: var(--text-color);
 }
+
+.filter-section ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.filter-section h3 {
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .filter-panel {
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .filter-section ul {
+        display: flex;
+        flex-wrap: wrap;
+        /* Ensure that the items wrap within the panel */
+        gap: 10px;
+    }
+
+    .filter-section li {
+        width: 100%;
+    }
+
+    .filter-section label {
+        width: 100%;
+        display: block;
+    }
+}
 </style>
+

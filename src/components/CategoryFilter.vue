@@ -42,10 +42,14 @@ function resetCategoryFilter() {
 
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
+    /* Ensure items wrap on smaller screens */
     gap: 15px;
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    /* Center the content */
 }
 
 .nav-links li {
@@ -56,6 +60,8 @@ function resetCategoryFilter() {
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
+    white-space: nowrap;
+    /* Prevent text wrapping inside links */
 }
 
 .nav-links a:hover {
@@ -94,4 +100,18 @@ function resetCategoryFilter() {
 .reset-button {
     color: var(--text-color);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        /* Stack links vertically on smaller screens */
+        gap: 10px;
+    }
+
+    .reset-button {
+        margin-top: 20px;
+    }
+}
 </style>
+

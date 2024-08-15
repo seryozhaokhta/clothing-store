@@ -1,6 +1,8 @@
 // src/i18n/en.js
 
 export default {
+  generalWelcome: 'New Melle collection',
+  generalSubtitle: 'dsfdsf',
   welcome: 'Gabriel store',
   home: 'Home',
   subtitle: 'Your one-stop shop for fashion',
@@ -62,5 +64,9 @@ export default {
     mission:
       'Our mission is to inspire confidence and self-expression through fashion. We believe that everyone deserves to feel good about what they wear, and we are committed to making fashion accessible to everyone.',
     team: "Our team is made up of passionate individuals who are dedicated to providing the best shopping experience possible. We are always here to help, and we strive to exceed our customers' expectations every day."
+  },
+  gallerySection: {
+    title: 'Our Gallery'
   }
 }
+

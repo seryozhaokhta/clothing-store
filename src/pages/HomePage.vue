@@ -2,17 +2,22 @@
 
 <template>
   <div class="homepage-container">
+    <HeroBanner />
     <section class="hero-section">
       <h1>{{ $t('welcome') }}</h1>
       <p>{{ $t('subtitle') }}</p>
     </section>
-    <ImageGallery :images="images" />
+    <section class="gallery-section">
+      <h2>{{ $t('gallerySection.title') }}</h2>
+      <ImageGallery :images="images" />
+    </section>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
+import HeroBanner from '@/components/HeroBanner.vue';
 import ImageGallery from '@/components/ImageGallery.vue';
 
 const images = ref([
@@ -39,7 +44,6 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -59,5 +63,18 @@ onMounted(() => {
   font-size: var(--font-size-medium);
   color: var(--text-color-secondary);
   font-weight: var(--font-weight-light);
+}
+
+.gallery-section {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: var(--background-alt-color);
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--text-color);
 }
 </style>

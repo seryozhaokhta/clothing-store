@@ -48,4 +48,15 @@ defineProps({
 .pagination button:disabled {
     color: var(--text-color-secondary);
 }
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pagination button {
+        width: 100%;
+    }
+}
 </style>

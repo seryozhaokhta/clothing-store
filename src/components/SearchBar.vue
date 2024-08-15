@@ -67,5 +67,21 @@ function search() {
 .search-bar button:hover {
     background-color: #f0f0f0;
 }
+
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+}
 </style>
 

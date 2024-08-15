@@ -7,10 +7,9 @@ import ru from './ru'
 const messages = { en, ru }
 
 const i18n = createI18n({
-  locale: 'en',
-  fallbackLocale: 'ru',
+  locale: 'ru',
+  fallbackLocale: 'en',
   messages
 })
 
 export default i18n
-
