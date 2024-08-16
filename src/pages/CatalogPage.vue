@@ -61,7 +61,22 @@ const products = ref([
     { id: 28, name: 'Product 28', price: 280, isFavorite: false, category: 'for-men', sizes: ['M', 'L', 'XL'], tags: ['newArrivals'], brand: 'Ysabel Mora' },
     { id: 29, name: 'Product 29', price: 220, isFavorite: false, category: 'underwear', sizes: ['34', '36'], tags: ['popular'], brand: 'Jolidon' },
     { id: 30, name: 'Product 30', price: 190, isFavorite: false, category: 'new-arrivals', sizes: ['S', 'M', 'L'], tags: ['sale'], brand: 'Gorsenia' },
-    { id: 31, name: 'Product 31', price: 210, isFavorite: false, category: 'swimwear', sizes: ['M', 'L'], tags: ['newArrivals'], brand: 'Subtille' }
+    { id: 31, name: 'Product 31', price: 210, isFavorite: false, category: 'swimwear', sizes: ['M', 'L'], tags: ['newArrivals'], brand: 'Subtille' },
+    {
+        id: 32,
+        name: 'Product 32',
+        price: 250,
+        isFavorite: false,
+        category: 'underwear',
+        sizes: ['34', '36'],
+        tags: ['newArrivals'],
+        brand: 'Melle',
+        images: [
+            '/src/assets/catalog/DALILA-black/ML0611_черн_2.jpg',
+            '/src/assets/catalog/DALILA-black/ML0614_черн+ML0601_2.jpg',
+            '/src/assets/catalog/DALILA-black/ML0614_черн+ML0601_3.jpg'
+        ]
+    }
 ]);
 
 const filters = ref({
@@ -220,6 +235,6 @@ function nextPage() {
 
 .pagination {
     background-color: var(--background-color);
-    color: var (--text-color);
+    color: var(--text-color);
 }
 </style>

@@ -6,20 +6,38 @@
         <div class="filter-section">
             <h3>{{ $t('brands') }}</h3>
             <ul>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Kris line" /> Kris line</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Subtille" /> Subtille</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Esotiq" /> Esotiq</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Gorsenia" /> Gorsenia</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Kinga" /> Kinga</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Ysabel Mora" /> Ysabel Mora</label></li>
-                <li><label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
-                            value="Jolidon" /> Jolidon</label></li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Kris line" /> Kris line</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Subtille" /> Subtille</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Esotiq" /> Esotiq</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Gorsenia" /> Gorsenia</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Kinga" /> Kinga</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Ysabel Mora" /> Ysabel Mora</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Jolidon" /> Jolidon</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" v-model="localFilters.brands" @change="applyLocalFilters"
+                            value="Melle" /> Melle</label>
+                </li>
             </ul>
         </div>
         <div class="filter-section">
@@ -29,8 +47,9 @@
         <div class="filter-section">
             <h3>{{ $t('size') }}</h3>
             <ul>
-                <li v-for="size in availableSizes" :key="size"><label><input type="checkbox"
-                            v-model="localFilters.sizes" @change="applyLocalFilters" :value="size" /> {{ size }}</label>
+                <li v-for="size in availableSizes" :key="size">
+                    <label><input type="checkbox" v-model="localFilters.sizes" @change="applyLocalFilters"
+                            :value="size" /> {{ size }}</label>
                 </li>
             </ul>
         </div>
@@ -123,7 +142,6 @@ watch(localFilters, applyLocalFilters, { deep: true });
     .filter-section ul {
         display: flex;
         flex-wrap: wrap;
-        /* Ensure that the items wrap within the panel */
         gap: 10px;
     }
 
@@ -137,4 +155,3 @@ watch(localFilters, applyLocalFilters, { deep: true });
     }
 }
 </style>
-

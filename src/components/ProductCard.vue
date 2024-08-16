@@ -2,6 +2,18 @@
 
 <template>
     <div class="product-card">
+        <div class="product-images">
+            <swiper :slides-per-view="1" :loop="true" @slideChange="onSlideChange">
+                <swiper-slide v-for="(image, index) in product.images" :key="index">
+                    <img :src="image" :alt="`${product.name} ${index + 1}`" />
+                </swiper-slide>
+            </swiper>
+            <!-- Кастомные индикаторы -->
+            <div class="custom-pagination">
+                <span v-for="(image, index) in product.images" :key="index"
+                    :class="{ 'active': currentSlide === index }"></span>
+            </div>
+        </div>
         <div class="product-info">
             <h3>{{ product.name }}</h3>
             <p>{{ product.price }} {{ $t('currency') }}</p>
@@ -23,6 +35,8 @@
 <script setup>
 import { ref } from 'vue';
 import { useCartStore } from '@/stores/cart';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
 
 const props = defineProps({
     product: {
@@ -33,8 +47,8 @@ const props = defineProps({
 
 const emit = defineEmits(['toggleFavorite']);
 
-// Локальная переменная для отслеживания состояния избранного
 const isFavorite = ref(props.product.isFavorite);
+const currentSlide = ref(0);  // Текущий индекс слайда
 
 const cartStore = useCartStore();
 
@@ -45,7 +59,6 @@ const addToCart = () => {
 const toggleFavorite = () => {
     isFavorite.value = !isFavorite.value;
 
-    // Избранные товары в `localStorage`
     const favoriteProducts = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
     if (isFavorite.value) {
         favoriteProducts.push(props.product);
@@ -57,6 +70,11 @@ const toggleFavorite = () => {
     }
     localStorage.setItem('favoriteProducts', JSON.stringify(favoriteProducts));
     emit('toggleFavorite', props.product.id);
+};
+
+// Обработчик изменения слайда
+const onSlideChange = (swiper) => {
+    currentSlide.value = swiper.realIndex;  // Обновляем текущий индекс слайда
 };
 </script>
 
@@ -70,6 +88,43 @@ const toggleFavorite = () => {
     justify-content: space-between;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+.product-images {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.product-images img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.custom-pagination span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.custom-pagination span.active {
+    opacity: 1;
 }
 
 .product-info {
@@ -97,11 +152,5 @@ const toggleFavorite = () => {
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 12px;
-}
-
-/* Dark Mode Styles */
-.product-card {
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 </style>

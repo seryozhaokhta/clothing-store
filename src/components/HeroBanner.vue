@@ -35,7 +35,7 @@ onMounted(() => {
 .hero-banner {
     width: 100%;
     height: 1080px;
-    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    background: url('src/assets/homePage/homepagee.png') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +49,7 @@ onMounted(() => {
 }
 
 .hero-content h1 {
+    color: var(--text-color);
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -65,7 +66,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
 }
 </style>

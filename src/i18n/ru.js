@@ -7,6 +7,7 @@ export default {
   home: 'Главная',
   subtitle: 'Ваш универсальный магазин моды',
   catalog: 'Каталог',
+  size: 'Размер',
   cart: 'Корзина',
   cartIsEmpty: 'Ваша корзина пуста',
   addToCart: 'Добавить в корзину',

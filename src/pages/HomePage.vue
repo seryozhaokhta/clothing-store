@@ -4,9 +4,9 @@
   <div class="homepage-container">
     <HeroBanner />
     <section class="hero-section">
-      <h1>{{ $t('welcome') }}</h1>
-      <p>{{ $t('subtitle') }}</p>
     </section>
+    <h1>{{ $t('welcome') }}</h1>
+    <p>{{ $t('subtitle') }}</p>
     <section class="gallery-section">
       <h2>{{ $t('gallerySection.title') }}</h2>
       <ImageGallery :images="images" />
