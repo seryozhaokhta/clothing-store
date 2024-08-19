@@ -7,6 +7,7 @@ export default {
   home: 'Home',
   subtitle: 'Your one-stop shop for fashion',
   catalog: 'Catalog',
+  colors: 'Colors',
   size: 'Size',
   cart: 'Cart',
   cartIsEmpty: 'Your cart is empty',

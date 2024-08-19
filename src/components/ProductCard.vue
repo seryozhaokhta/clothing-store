@@ -22,6 +22,10 @@
                 <span class="tag">{{ product.brand }}</span>
                 <span v-for="size in product.sizes" :key="size" class="tag">{{ size }}</span>
             </div>
+            <div class="colors">
+                <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: color }"
+                    class="color-circle"></span>
+            </div>
         </div>
         <div class="product-actions">
             <button @click="addToCart">{{ $t('addToCart') }}</button>
@@ -153,4 +157,18 @@ const onSlideChange = (swiper) => {
     padding: 2px 5px;
     font-size: 12px;
 }
+
+.colors {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
 </style>
+

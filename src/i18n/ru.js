@@ -7,6 +7,7 @@ export default {
   home: 'Главная',
   subtitle: 'Ваш универсальный магазин моды',
   catalog: 'Каталог',
+  colors: 'Цвета',
   size: 'Размер',
   cart: 'Корзина',
   cartIsEmpty: 'Ваша корзина пуста',

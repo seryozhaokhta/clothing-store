@@ -44,6 +44,17 @@
             <h3>{{ $t('price') }}</h3>
             <Slider v-model="localFilters.priceRange" :min="0" :max="maxPrice" :tooltip="'always'" />
         </div>
+        <div class="filter-section" v-if="availableColors.length">
+            <h3>{{ $t('colors') }}</h3>
+            <ul class="color-palette">
+                <li v-for="color in availableColors" :key="color">
+                    <label :style="{ backgroundColor: color }">
+                        <input type="checkbox" v-model="localFilters.colors" @change="applyLocalFilters"
+                            :value="color" />
+                    </label>
+                </li>
+            </ul>
+        </div>
         <div class="filter-section">
             <h3>{{ $t('size') }}</h3>
             <ul>
@@ -69,10 +80,6 @@ const props = defineProps({
     maxPrice: {
         type: Number,
         required: true
-    },
-    currentCategory: {
-        type: String,
-        required: true
     }
 });
 
@@ -80,16 +87,49 @@ const emits = defineEmits(['applyFilters']);
 
 const localFilters = ref({ ...props.filters, priceRange: [0, props.maxPrice] });
 
-const sizesByCategory = {
-    'home-wear': ['S', 'M', 'L', 'XL'],
-    'underwear': ['34', '36', '38', '40', '42'],
-    'swimwear': ['S', 'M', 'L', 'XL'],
-    'socks-and-accessories': ['One Size'],
-    'erotic-lingerie': ['S', 'M', 'L'],
-    'for-men': ['M', 'L', 'XL', 'XXL'],
+const sizesByBrand = {
+    'Kris line': ['S', 'M', 'L'],
+    'Subtille': ['M', 'L', 'XL'],
+    'Esotiq': ['34', '36', '38'],
+    'Gorsenia': ['S', 'M', 'L', 'XL'],
+    'Kinga': ['34', '36'],
+    'Ysabel Mora': ['One Size'],
+    'Jolidon': ['S', 'M', 'L', 'XL'],
+    'Melle': ['34', '36', '38', '40', '42']
 };
 
-const availableSizes = computed(() => sizesByCategory[props.currentCategory] || []);
+const colorsByBrand = {
+    'Kris line': ['black', 'white'],
+    'Subtille': ['blue', 'red'],
+    'Esotiq': ['pink', 'beige'],
+    'Gorsenia': ['black', 'gray'],
+    'Kinga': ['white', 'beige'],
+    'Ysabel Mora': ['black'],
+    'Jolidon': ['red', 'black'],
+    'Melle': ['black', 'powder', 'milky', 'jeans', 'green']
+};
+
+const availableSizes = computed(() => {
+    const selectedBrands = localFilters.value.brands;
+    let sizes = [];
+
+    selectedBrands.forEach(brand => {
+        sizes = sizes.concat(sizesByBrand[brand] || []);
+    });
+
+    return [...new Set(sizes)];
+});
+
+const availableColors = computed(() => {
+    const selectedBrands = localFilters.value.brands;
+    let colors = [];
+
+    selectedBrands.forEach(brand => {
+        colors = colors.concat(colorsByBrand[brand] || []);
+    });
+
+    return [...new Set(colors)];
+});
 
 watch(props.filters, (newFilters) => {
     localFilters.value = { ...newFilters, priceRange: [0, props.maxPrice] };
@@ -128,6 +168,29 @@ watch(localFilters, applyLocalFilters, { deep: true });
 
 .filter-section h3 {
     margin-bottom: 10px;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.color-palette li label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.color-palette li label input {
+    display: none;
+}
+
+.color-palette li label input:checked {
+    border-color: #ff4081;
 }
 
 /* Responsive Styles */
