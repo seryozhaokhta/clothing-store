@@ -10,11 +10,11 @@
 <script setup>
 import { ref } from 'vue';
 
+const emits = defineEmits(['performSearch']);
 const query = ref('');
 
 function search() {
-    console.log('Searching for:', query.value);
-    // Здесь добавить логику поиска
+    emits('performSearch', query.value);
 }
 </script>
 
@@ -84,4 +84,3 @@ function search() {
     }
 }
 </style>
-

@@ -3,320 +3,240 @@
 export const products = [
   {
     id: 1,
-    name: 'Product 1',
-    price: 100,
-    isFavorite: false,
-    category: 'new-arrivals',
-    sizes: ['S', 'M', 'L'],
-    tags: ['newArrivals', 'popular'],
-    brand: 'Kris line'
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    price: 200,
-    isFavorite: false,
-    category: 'sale',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['sale', 'newArrivals'],
-    brand: 'Subtille'
-  },
-  {
-    id: 3,
     name: 'Product 3',
     price: 150,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'shapewear',
     sizes: ['34', '36', '38'],
     tags: ['popular'],
-    brand: 'Esotiq'
+    brand: 'Esotiq',
+    colors: ['pink', 'beige'],
+    images: [
+      '/src/assets/catalog/Esotiq/product3_1.jpg',
+      '/src/assets/catalog/Esotiq/product3_2.jpg'
+    ]
   },
   {
-    id: 4,
+    id: 2,
     name: 'Product 4',
     price: 180,
     isFavorite: false,
     category: 'home-wear',
+    subcategory: 'pajamas',
     sizes: ['S', 'M'],
     tags: [],
-    brand: 'Gorsenia'
+    brand: 'Gorsenia',
+    colors: ['gray'],
+    images: [
+      '/src/assets/catalog/Gorsenia/product4_1.jpg',
+      '/src/assets/catalog/Gorsenia/product4_2.jpg'
+    ]
+  },
+  {
+    id: 3,
+    name: 'Product 11',
+    price: 160,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['M', 'L'],
+    tags: ['newArrivals'],
+    brand: 'Jolidon',
+    colors: ['black', 'red'],
+    images: [
+      '/src/assets/catalog/Jolidon/product11_1.jpg',
+      '/src/assets/catalog/Jolidon/product11_2.jpg'
+    ]
+  },
+  {
+    id: 4,
+    name: 'SIMPLE',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      '/src/assets/catalog/Julimex/SIMPLE/bra/black/dbt77e906f5b3fin39hyimegd4eb2379.png',
+      '/src/assets/catalog/Julimex/SIMPLE/bra/black/dtqbjbit1c7k9a7z13pet06daoav1ibw.png',
+      '/src/assets/catalog/Julimex/SIMPLE/bra/black/vmqqpterh9talvazaxzkjuixoqlyy16l.png'
+    ]
   },
   {
     id: 5,
+    name: 'SIMPLE',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/2pqaewql5ohoojbubpn2uglnudt3pju6.png',
+      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/9hj6vp2z4xd1jtgpolspn090wgnki23a.png',
+      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/f0ascrnvmtg3nx328bm8c93tpyqzfae7.png'
+    ]
+  },
+  {
+    id: 6,
+    name: 'INFINITY',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bodysuits',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/top/black/7m58up5kruescl94z74g3buyeio1df67.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/top/black/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/top/black/x1ikd63w2vcsifsz6cuqvuued028o6l3.jpg'
+    ]
+  },
+  {
+    id: 7,
+    name: 'INFINITY',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bodysuits',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/top/black/7m58up5kruescl94z74g3buyeio1df67.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/top/black/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/top/black/x1ikd63w2vcsifsz6cuqvuued028o6l3.jpg'
+    ]
+  },
+  {
+    id: 8,
+    name: 'INFINITY',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/bra/flash/2pqaewql5ohoojbubpn2uglnudt3pju6.png',
+      '/src/assets/catalog/Julimex/INFINITY/bra/flash/9hj6vp2z4xd1jtgpolspn090wgnki23a.png',
+      '/src/assets/catalog/Julimex/INFINITY/bra/flash/f0ascrnvmtg3nx328bm8c93tpyqzfae7.png'
+    ]
+  },
+  {
+    id: 9,
+    name: 'INFINITY BOYSHORT MAXI',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/114jv2vyuhkvfxxs067m23ls51p6f4i4.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/c89nm7zssrx8p00zp88vn68ephtk2co2.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/yw2im0jciaiodu2wwipnbjpccivv3fgk.jpg'
+    ]
+  },
+  {
+    id: 10,
+    name: 'INFINITY BOYSHORT MAXI',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/9itu9vesqn1hwk1bsryczjmxapkq00p8.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/9q4l54nqa6f1eagl6ax8yveg28vng6x5.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/w5jures8tpy2bjgmb1x2ywowgjweql0g.jpg'
+    ]
+  },
+  {
+    id: 11,
+    name: 'INFINITY MAXI',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/black/308xelgdx9mhsebiqhv7ld8jnk7782qm.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/black/hvmdulxgcpgbtts79qem43tu26ckujku.jpg'
+    ]
+  },
+  {
+    id: 12,
+    name: 'INFINITY MAXI',
+    price: 170,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/flqb8w92hkqjadiglhs3ij7ndw9hpd7h.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/gahbxh8864v15rl8fozmi3daemd2luln.jpg',
+      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/mn6dszy8xlw10szr9nc1ya4l5ralkar8.jpg'
+    ]
+  },
+  {
+    id: 13,
     name: 'Product 5',
     price: 120,
     isFavorite: false,
     category: 'swimwear',
+    subcategory: 'bikinis',
     sizes: ['M', 'L'],
     tags: [],
-    brand: 'Kinga'
-  },
-  {
-    id: 6,
-    name: 'Product 6',
-    price: 220,
-    isFavorite: false,
-    category: 'socks-and-accessories',
-    sizes: ['One Size'],
-    tags: [],
-    brand: 'Ysabel Mora'
-  },
-  {
-    id: 7,
-    name: 'Product 7',
-    price: 130,
-    isFavorite: false,
-    category: 'erotic-lingerie',
-    sizes: ['S', 'M', 'L'],
-    tags: [],
-    brand: 'Kris line'
-  },
-  {
-    id: 8,
-    name: 'Product 8',
-    price: 240,
-    isFavorite: false,
-    category: 'for-men',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Subtille'
-  },
-  {
-    id: 9,
-    name: 'Product 9',
-    price: 210,
-    isFavorite: false,
-    category: 'new-arrivals',
-    sizes: ['S', 'M'],
-    tags: ['sale'],
-    brand: 'Gorsenia'
-  },
-  {
-    id: 10,
-    name: 'Product 10',
-    price: 110,
-    isFavorite: false,
-    category: 'swimwear',
-    sizes: ['M', 'L'],
-    tags: ['sale'],
-    brand: 'Kinga'
-  },
-  {
-    id: 11,
-    name: 'Product 11',
-    price: 230,
-    isFavorite: false,
-    category: 'socks-and-accessories',
-    sizes: ['One Size'],
-    tags: ['newArrivals'],
-    brand: 'Ysabel Mora'
-  },
-  {
-    id: 12,
-    name: 'Product 12',
-    price: 140,
-    isFavorite: false,
-    category: 'erotic-lingerie',
-    sizes: ['S', 'M'],
-    tags: [],
-    brand: 'Kris line'
-  },
-  {
-    id: 13,
-    name: 'Product 13',
-    price: 220,
-    isFavorite: false,
-    category: 'for-men',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['popular'],
-    brand: 'Subtille'
+    brand: 'Kinga',
+    colors: ['red'],
+    images: ['/src/assets/catalog/Kinga/product5_1.jpg', '/src/assets/catalog/Kinga/product5_2.jpg']
   },
   {
     id: 14,
-    name: 'Product 14',
-    price: 170,
+    name: 'Product 1',
+    price: 100,
     isFavorite: false,
     category: 'underwear',
-    sizes: ['34', '36'],
-    tags: ['sale'],
-    brand: 'Esotiq'
+    subcategory: 'bras',
+    sizes: ['S', 'M', 'L'],
+    tags: ['newArrivals', 'popular'],
+    brand: 'Kris line',
+    colors: ['black', 'white'],
+    images: [
+      '/src/assets/catalog/Kris_line/product1_1.jpg',
+      '/src/assets/catalog/Kris_line/product1_2.jpg'
+    ]
   },
   {
     id: 15,
-    name: 'Product 15',
-    price: 200,
-    isFavorite: false,
-    category: 'new-arrivals',
-    sizes: ['S', 'M', 'L'],
-    tags: ['newArrivals'],
-    brand: 'Gorsenia'
-  },
-  {
-    id: 16,
-    name: 'Product 16',
-    price: 130,
-    isFavorite: false,
-    category: 'underwear',
-    sizes: ['34', '36'],
-    tags: ['popular'],
-    brand: 'Kinga'
-  },
-  {
-    id: 17,
-    name: 'Product 17',
-    price: 250,
-    isFavorite: false,
-    category: 'home-wear',
-    sizes: ['S', 'M'],
-    tags: [],
-    brand: 'Ysabel Mora'
-  },
-  {
-    id: 18,
-    name: 'Product 18',
-    price: 120,
-    isFavorite: false,
-    category: 'swimwear',
-    sizes: ['M', 'L'],
-    tags: ['sale'],
-    brand: 'Kris line'
-  },
-  {
-    id: 19,
-    name: 'Product 19',
-    price: 240,
-    isFavorite: false,
-    category: 'socks-and-accessories',
-    sizes: ['One Size'],
-    tags: [],
-    brand: 'Subtille'
-  },
-  {
-    id: 20,
-    name: 'Product 20',
-    price: 150,
-    isFavorite: false,
-    category: 'erotic-lingerie',
-    sizes: ['S', 'M'],
-    tags: ['newArrivals'],
-    brand: 'Esotiq'
-  },
-  {
-    id: 21,
-    name: 'Product 21',
-    price: 230,
-    isFavorite: false,
-    category: 'for-men',
-    sizes: ['M', 'L', 'XL'],
-    tags: [],
-    brand: 'Gorsenia'
-  },
-  {
-    id: 22,
-    name: 'Product 22',
-    price: 180,
-    isFavorite: false,
-    category: 'new-arrivals',
-    sizes: ['S', 'M', 'L'],
-    tags: ['popular'],
-    brand: 'Ysabel Mora'
-  },
-  {
-    id: 23,
-    name: 'Product 23',
-    price: 160,
-    isFavorite: false,
-    category: 'underwear',
-    sizes: ['34', '36'],
-    tags: [],
-    brand: 'Kris line'
-  },
-  {
-    id: 24,
-    name: 'Product 24',
-    price: 270,
-    isFavorite: false,
-    category: 'home-wear',
-    sizes: ['S', 'M'],
-    tags: ['newArrivals'],
-    brand: 'Subtille'
-  },
-  {
-    id: 25,
-    name: 'Product 25',
-    price: 200,
-    isFavorite: false,
-    category: 'swimwear',
-    sizes: ['M', 'L'],
-    tags: ['sale'],
-    brand: 'Esotiq'
-  },
-  {
-    id: 26,
-    name: 'Product 26',
-    price: 260,
-    isFavorite: false,
-    category: 'socks-and-accessories',
-    sizes: ['One Size'],
-    tags: [],
-    brand: 'Gorsenia'
-  },
-  {
-    id: 27,
-    name: 'Product 27',
-    price: 150,
-    isFavorite: false,
-    category: 'erotic-lingerie',
-    sizes: ['S', 'M'],
-    tags: ['popular'],
-    brand: 'Kinga'
-  },
-  {
-    id: 28,
-    name: 'Product 28',
-    price: 280,
-    isFavorite: false,
-    category: 'for-men',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Ysabel Mora'
-  },
-  {
-    id: 29,
-    name: 'Product 29',
-    price: 220,
-    isFavorite: false,
-    category: 'underwear',
-    sizes: ['34', '36'],
-    tags: ['popular'],
-    brand: 'Jolidon'
-  },
-  {
-    id: 30,
-    name: 'Product 30',
-    price: 190,
-    isFavorite: false,
-    category: 'new-arrivals',
-    sizes: ['S', 'M', 'L'],
-    tags: ['sale'],
-    brand: 'Gorsenia'
-  },
-  {
-    id: 31,
-    name: 'Product 31',
-    price: 210,
-    isFavorite: false,
-    category: 'swimwear',
-    sizes: ['M', 'L'],
-    tags: ['newArrivals'],
-    brand: 'Subtille'
-  },
-  {
-    id: 32,
     name: 'DALILA',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -328,11 +248,12 @@ export const products = [
     ]
   },
   {
-    id: 35,
+    id: 16,
     name: 'EMMA',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -344,11 +265,12 @@ export const products = [
     ]
   },
   {
-    id: 36,
+    id: 17,
     name: 'LILOU',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -360,11 +282,12 @@ export const products = [
     ]
   },
   {
-    id: 37,
+    id: 18,
     name: 'LOVE',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -376,11 +299,12 @@ export const products = [
     ]
   },
   {
-    id: 38,
+    id: 19,
     name: 'MADELEINE',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -392,11 +316,12 @@ export const products = [
     ]
   },
   {
-    id: 39,
+    id: 20,
     name: 'NUANCE',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -408,11 +333,12 @@ export const products = [
     ]
   },
   {
-    id: 40,
+    id: 21,
     name: 'PERFECT',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -424,11 +350,12 @@ export const products = [
     ]
   },
   {
-    id: 41,
+    id: 22,
     name: 'SAMANTA',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -440,11 +367,12 @@ export const products = [
     ]
   },
   {
-    id: 42,
+    id: 23,
     name: 'TRESOR',
     price: 250,
     isFavorite: false,
     category: 'underwear',
+    subcategory: 'bras',
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
@@ -454,5 +382,54 @@ export const products = [
       '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg',
       '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg'
     ]
+  },
+  {
+    id: 24,
+    name: 'Product 13',
+    price: 180,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'shapewear',
+    sizes: ['M', 'L'],
+    tags: ['newArrivals'],
+    brand: 'Novika',
+    colors: ['white', 'beige'],
+    images: [
+      '/src/assets/catalog/Novika/product13_1.jpg',
+      '/src/assets/catalog/Novika/product13_2.jpg'
+    ]
+  },
+  {
+    id: 25,
+    name: 'Product 2',
+    price: 200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['sale', 'newArrivals'],
+    brand: 'Subtille',
+    colors: ['blue', 'red'],
+    images: [
+      '/src/assets/catalog/Subtille/product2_1.jpg',
+      '/src/assets/catalog/Subtille/product2_2.jpg'
+    ]
+  },
+  {
+    id: 26,
+    name: 'Product 6',
+    price: 220,
+    isFavorite: false,
+    category: 'socks-and-accessories',
+    subcategory: 'socks',
+    sizes: ['One Size'],
+    tags: [],
+    brand: 'Ysabel Mora',
+    colors: ['white', 'black'],
+    images: [
+      '/src/assets/catalog/Ysabel_Mora/product6_1.jpg',
+      '/src/assets/catalog/Ysabel_Mora/product6_2.jpg'
+    ]
   }
 ]
+

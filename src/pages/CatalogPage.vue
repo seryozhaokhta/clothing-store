@@ -3,11 +3,12 @@
 <template>
     <h1>{{ $t('catalog') }}</h1>
     <div class="catalog-container">
-        <CategoryFilter @filterCategory="applyCategoryFilter" @resetCategoryFilter="resetCategoryFilter" />
-        <SearchBar />
+        <CategoryFilter @filterCategory="applyCategoryFilter" @filterSubcategory="applySubcategoryFilter"
+            @resetCategoryFilter="resetFilters" />
+        <SearchBar @performSearch="performSearch" />
         <div class="catalog-main">
             <FilterPanel :filters="filters" :maxPrice="maxPrice" :currentCategory="currentCategory"
-                @applyFilters="applyFilters" />
+                @applyFilters="applyFilters" @resetFilters="resetFilters" />
             <main class="catalog-content">
                 <div class="product-grid">
                     <ProductCard v-for="product in paginatedProducts" :key="product.id" :product="product"
@@ -30,35 +31,45 @@ import PaginationComponent from '@/components/PaginationComponent.vue';
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import SearchBar from '@/components/SearchBar.vue';
 
-const productsRef = ref(products);
+const productsRef = ref(Object.values(products).flat());
 
 const filters = ref({
     categories: [],
+    subcategories: [],
     brands: [],
-    priceRange: [0, 1000],
+    priceRange: [0, Math.max(...productsRef.value.map(p => p.price))],
     sizes: [],
-    colors: [] // добавляем поле для фильтрации по цветам
+    colors: [],
+    searchQuery: ''
 });
 
-const currentCategory = ref('');
+const maxPrice = ref(Math.max(...productsRef.value.map(p => p.price)));
 
-const maxPrice = ref(Math.max(...productsRef.value.map((p) => p.price)));
+const currentCategory = ref('');
+const currentSubcategory = ref('');
 
 const currentPage = ref(1);
 const itemsPerPage = 10;
 
 const filteredProducts = computed(() => {
     return productsRef.value.filter((product) => {
-        const matchesCategory = filters.value.categories.length
+        const matchesCategory = filters.value.categories.length > 0
             ? filters.value.categories.includes(product.category)
             : true;
+        const matchesSubcategory = filters.value.subcategories.length > 0
+            ? filters.value.subcategories.includes(product.subcategory)
+            : true;
         const matchesPrice = product.price >= filters.value.priceRange[0] && product.price <= filters.value.priceRange[1];
-        const matchesBrand = filters.value.brands.length ? filters.value.brands.includes(product.brand) : true;
-        const matchesSize = filters.value.sizes.length ? filters.value.sizes.some(size => product.sizes.includes(size)) : true;
-        const matchesColor = filters.value.colors.length
+        const matchesBrand = filters.value.brands.length > 0 ? filters.value.brands.includes(product.brand) : true;
+        const matchesSize = filters.value.sizes.length > 0 ? filters.value.sizes.some(size => product.sizes.includes(size)) : true;
+        const matchesColor = filters.value.colors.length > 0
             ? product.colors && filters.value.colors.some(color => product.colors.includes(color))
-            : true; // Убедитесь, что проверяется наличие цветов у продукта
-        return matchesCategory && matchesPrice && matchesBrand && matchesSize && matchesColor;
+            : true;
+        const matchesQuery = filters.value.searchQuery
+            ? product.name.toLowerCase().includes(filters.value.searchQuery.toLowerCase()) ||
+            product.brand.toLowerCase().includes(filters.value.searchQuery.toLowerCase())
+            : true;
+        return matchesCategory && matchesSubcategory && matchesPrice && matchesBrand && matchesSize && matchesColor && matchesQuery;
     });
 });
 
@@ -71,20 +82,44 @@ const paginatedProducts = computed(() => {
 });
 
 function applyFilters(newFilters) {
-    filters.value = newFilters;
+    filters.value = { ...filters.value, ...newFilters };
     currentPage.value = 1;
 }
 
-function applyCategoryFilter(category) {
+function applyCategoryFilter({ category }) {
     filters.value.categories = [category];
+    filters.value.subcategories = [];
+    applyFilters({ categories: [category], subcategories: [] });
     currentCategory.value = category;
+    currentSubcategory.value = '';
+}
+
+function applySubcategoryFilter({ category, subcategory }) {
+    filters.value.categories = [category];
+    filters.value.subcategories = [subcategory];
+    applyFilters({ categories: [category], subcategories: [subcategory] });
+    currentCategory.value = category;
+    currentSubcategory.value = subcategory;
+}
+
+function performSearch(query) {
+    filters.value.searchQuery = query;
     currentPage.value = 1;
 }
 
-function resetCategoryFilter() {
-    filters.value.categories = [];
-    currentCategory.value = '';
+function resetFilters() {
+    filters.value = {
+        categories: [],
+        subcategories: [],
+        brands: [],
+        priceRange: [0, maxPrice.value],
+        sizes: [],
+        colors: [],
+        searchQuery: ''
+    };
     currentPage.value = 1;
+    currentCategory.value = '';
+    currentSubcategory.value = '';
 }
 
 const cartStore = useCartStore();
