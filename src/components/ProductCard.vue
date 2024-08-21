@@ -2,42 +2,57 @@
 
 <template>
     <div class="product-card">
-        <div class="product-images">
-            <swiper :slides-per-view="1" :loop="true" @slideChange="onSlideChange">
-                <swiper-slide v-for="(image, index) in product.images" :key="index">
-                    <img :src="image" :alt="`${product.name} ${index + 1}`" />
-                </swiper-slide>
-            </swiper>
-            <!-- Кастомные индикаторы -->
-            <div class="custom-pagination">
-                <span v-for="(image, index) in product.images" :key="index"
-                    :class="{ 'active': currentSlide === index }"></span>
+        <div v-if="isLoading">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton skeleton-small-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-tag"></div>
+            <div class="skeleton-color-wrapper">
+                <div class="skeleton skeleton-color" v-for="index in 3" :key="index"></div>
             </div>
         </div>
-        <div class="product-info">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.price }} {{ $t('currency') }}</p>
-            <div class="tags">
-                <span v-for="tag in product.tags" :key="tag" class="tag">{{ $t(tag) }}</span>
-                <span class="tag">{{ product.brand }}</span>
-                <span v-for="size in product.sizes" :key="size" class="tag">{{ size }}</span>
+        <div v-else>
+            <div class="product-images">
+                <swiper :slides-per-view="1" :loop="true" @slideChange="onSlideChange">
+                    <swiper-slide v-for="(image, index) in product.images" :key="index">
+                        <div class="image-wrapper">
+                            <img :src="loadedImages[index] ? image : '/src/assets/placeholder.png'"
+                                :alt="`${product.name} ${index + 1}`" @error="onImageError(index)"
+                                @load="onImageLoad(index)" />
+                        </div>
+                    </swiper-slide>
+                </swiper>
+                <!-- Кастомные индикаторы -->
+                <div class="custom-pagination">
+                    <span v-for="(image, index) in product.images" :key="index"
+                        :class="{ 'active': currentSlide === index }"></span>
+                </div>
             </div>
-            <div class="colors">
-                <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: color }"
-                    class="color-circle"></span>
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.price }} {{ $t('currency') }}</p>
+                <div class="tags">
+                    <span v-for="tag in product.tags" :key="tag" class="tag">{{ $t(tag) }}</span>
+                    <span class="tag">{{ product.brand }}</span>
+                    <span v-for="size in product.sizes" :key="size" class="tag">{{ size }}</span>
+                </div>
+                <div class="colors">
+                    <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: color }"
+                        class="color-circle"></span>
+                </div>
             </div>
-        </div>
-        <div class="product-actions">
-            <button @click="addToCart">{{ $t('addToCart') }}</button>
-            <button @click="toggleFavorite">
-                <span :class="{ 'favorite': isFavorite }">❤</span>
-            </button>
+            <div class="product-actions">
+                <button @click="addToCart">{{ $t('addToCart') }}</button>
+                <button @click="toggleFavorite">
+                    <span :class="{ 'favorite': isFavorite }">❤</span>
+                </button>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useCartStore } from '@/stores/cart';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
@@ -52,7 +67,9 @@ const props = defineProps({
 const emit = defineEmits(['toggleFavorite']);
 
 const isFavorite = ref(props.product.isFavorite);
-const currentSlide = ref(0);  // Текущий индекс слайда
+const currentSlide = ref(0);
+const loadedImages = ref(Array(props.product.images.length).fill(true));
+const isLoading = ref(true);
 
 const cartStore = useCartStore();
 
@@ -76,10 +93,33 @@ const toggleFavorite = () => {
     emit('toggleFavorite', props.product.id);
 };
 
-// Обработчик изменения слайда
 const onSlideChange = (swiper) => {
-    currentSlide.value = swiper.realIndex;  // Обновляем текущий индекс слайда
+    currentSlide.value = swiper.realIndex;
 };
+
+const onImageLoad = (index) => {
+    loadedImages.value[index] = true;
+    checkIfLoaded();
+};
+
+const onImageError = (index) => {
+    loadedImages.value[index] = false;
+    checkIfLoaded();
+    console.error(`Image not found for product ${props.product.name}, replacing with placeholder.`);
+};
+
+const checkIfLoaded = () => {
+    if (loadedImages.value.every((loaded) => loaded)) {
+        isLoading.value = false;
+    }
+};
+
+onMounted(() => {
+    // Имитируем задержку для загрузки
+    setTimeout(() => {
+        checkIfLoaded();
+    }, 1000);
+});
 </script>
 
 <style scoped>
@@ -98,12 +138,22 @@ const onSlideChange = (swiper) => {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }
 
 .product-images img {
     max-width: 100%;
-    height: auto;
-    display: block;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .custom-pagination {
@@ -170,5 +220,44 @@ const onSlideChange = (swiper) => {
     border-radius: 50%;
     border: 2px solid #ddd;
 }
-</style>
 
+/* Стили для скелетона */
+.skeleton {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 20px;
+}
+
+.skeleton-small-text {
+    width: 60%;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.skeleton-tag {
+    width: 40%;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.skeleton-color-wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.skeleton-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+</style>

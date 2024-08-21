@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, nextTick } from 'vue';
 import { useCartStore } from '@/stores/cart';
 import { products } from '@/data/products';
 import FilterPanel from '@/components/FilterPanel.vue';
@@ -30,6 +30,7 @@ import ProductCard from '@/components/ProductCard.vue';
 import PaginationComponent from '@/components/PaginationComponent.vue';
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import SearchBar from '@/components/SearchBar.vue';
+import gsap from 'gsap';
 
 const productsRef = ref(Object.values(products).flat());
 
@@ -81,9 +82,21 @@ const paginatedProducts = computed(() => {
     return filteredProducts.value.slice(start, end);
 });
 
+const animateProductCards = async () => {
+    await nextTick(); // Ожидаем рендеринг DOM элементов
+    gsap.fromTo('.product-card', { opacity: 0, y: 20 }, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power1.out',
+    });
+};
+
 function applyFilters(newFilters) {
     filters.value = { ...filters.value, ...newFilters };
     currentPage.value = 1;
+    animateProductCards(); // Запускаем анимацию при изменении фильтров
 }
 
 function applyCategoryFilter({ category }) {
@@ -105,6 +118,7 @@ function applySubcategoryFilter({ category, subcategory }) {
 function performSearch(query) {
     filters.value.searchQuery = query;
     currentPage.value = 1;
+    animateProductCards(); // Запускаем анимацию при поиске
 }
 
 function resetFilters() {
@@ -120,6 +134,7 @@ function resetFilters() {
     currentPage.value = 1;
     currentCategory.value = '';
     currentSubcategory.value = '';
+    animateProductCards(); // Запускаем анимацию при сбросе фильтров
 }
 
 const cartStore = useCartStore();
@@ -136,15 +151,23 @@ function toggleFavorite(product) {
 function prevPage() {
     if (currentPage.value > 1) {
         currentPage.value--;
+        animateProductCards(); // Запускаем анимацию при смене страницы
     }
 }
 
 function nextPage() {
     if (currentPage.value < totalPages.value) {
         currentPage.value++;
+        animateProductCards(); // Запускаем анимацию при смене страницы
     }
 }
+
+// Запускаем анимацию при первом монтировании компонента
+onMounted(() => {
+    animateProductCards();
+});
 </script>
+
 
 <style scoped>
 .catalog-container {
