@@ -3,18 +3,50 @@
 export const products = [
   {
     id: 1,
-    name: 'Product 3',
-    price: 150,
+    name: 'KORIN',
+    price: 3900,
     isFavorite: false,
     category: 'underwear',
-    subcategory: 'shapewear',
+    subcategory: 'bras',
     sizes: ['34', '36', '38'],
     tags: ['popular'],
     brand: 'Esotiq',
-    colors: ['pink', 'beige'],
+    colors: ['green'],
     images: [
-      '/src/assets/catalog/Esotiq/product3_1.jpg',
-      '/src/assets/catalog/Esotiq/product3_2.jpg'
+      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/dusnbwsngefermzfd8g2nsrlgzh3i1u2.jpg',
+      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/9g0bgre4gxc9gcb71vspqu0ywyer4lu8.jpg'
+    ]
+  },
+  {
+    id: 2,
+    name: 'KORIN',
+    price: 3900,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36', '38'],
+    tags: ['popular'],
+    brand: 'Esotiq',
+    colors: ['green'],
+    images: [
+      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/nwiipe65oqacwjfor4vn78l138843791.jpg',
+      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/rsx5y7a7wh1x2554ffl3og1zlavxn61e.jpg'
+    ]
+  },
+  {
+    id: 3,
+    name: 'KORIN',
+    price: 1800,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['34', '36', '38'],
+    tags: ['popular'],
+    brand: 'Esotiq',
+    colors: ['green'],
+    images: [
+      '/src/assets/catalog/Esotiq/KORIN/panties/emerald/8d0p3flssitonnr4iskampd0cdpmr3d8.jpg',
+      '/src/assets/catalog/Esotiq/KORIN/panties/emerald/y7jq6z6g60nh1kt2rudjmciwna84ylzj.jpg'
     ]
   },
   {
@@ -28,10 +60,7 @@ export const products = [
     tags: [],
     brand: 'Gorsenia',
     colors: ['gray'],
-    images: [
-      '/src/assets/catalog/Gorsenia/product4_1.jpg',
-      '/src/assets/catalog/Gorsenia/product4_2.jpg'
-    ]
+    images: []
   },
   {
     id: 3,
@@ -44,10 +73,7 @@ export const products = [
     tags: ['newArrivals'],
     brand: 'Jolidon',
     colors: ['black', 'red'],
-    images: [
-      '/src/assets/catalog/Jolidon/product11_1.jpg',
-      '/src/assets/catalog/Jolidon/product11_2.jpg'
-    ]
+    images: []
   },
   {
     id: 4,
@@ -115,23 +141,6 @@ export const products = [
       '/src/assets/catalog/Julimex/INFINITY/top/black/7m58up5kruescl94z74g3buyeio1df67.jpg',
       '/src/assets/catalog/Julimex/INFINITY/top/black/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0.jpg',
       '/src/assets/catalog/Julimex/INFINITY/top/black/x1ikd63w2vcsifsz6cuqvuued028o6l3.jpg'
-    ]
-  },
-  {
-    id: 8,
-    name: 'INFINITY',
-    price: 170,
-    isFavorite: false,
-    category: 'underwear',
-    subcategory: 'panties',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Julimex',
-    colors: ['black'],
-    images: [
-      '/src/assets/catalog/Julimex/INFINITY/bra/flash/2pqaewql5ohoojbubpn2uglnudt3pju6.png',
-      '/src/assets/catalog/Julimex/INFINITY/bra/flash/9hj6vp2z4xd1jtgpolspn090wgnki23a.png',
-      '/src/assets/catalog/Julimex/INFINITY/bra/flash/f0ascrnvmtg3nx328bm8c93tpyqzfae7.png'
     ]
   },
   {
@@ -212,7 +221,7 @@ export const products = [
     tags: [],
     brand: 'Kinga',
     colors: ['red'],
-    images: ['/src/assets/catalog/Kinga/product5_1.jpg', '/src/assets/catalog/Kinga/product5_2.jpg']
+    images: []
   },
   {
     id: 14,
@@ -225,10 +234,7 @@ export const products = [
     tags: ['newArrivals', 'popular'],
     brand: 'Kris line',
     colors: ['black', 'white'],
-    images: [
-      '/src/assets/catalog/Kris_line/product1_1.jpg',
-      '/src/assets/catalog/Kris_line/product1_2.jpg'
-    ]
+    images: []
   },
   {
     id: 15,
@@ -394,10 +400,7 @@ export const products = [
     tags: ['newArrivals'],
     brand: 'Novika',
     colors: ['white', 'beige'],
-    images: [
-      '/src/assets/catalog/Novika/product13_1.jpg',
-      '/src/assets/catalog/Novika/product13_2.jpg'
-    ]
+    images: []
   },
   {
     id: 25,
@@ -410,10 +413,7 @@ export const products = [
     tags: ['sale', 'newArrivals'],
     brand: 'Subtille',
     colors: ['blue', 'red'],
-    images: [
-      '/src/assets/catalog/Subtille/product2_1.jpg',
-      '/src/assets/catalog/Subtille/product2_2.jpg'
-    ]
+    images: []
   },
   {
     id: 26,
@@ -426,10 +426,6 @@ export const products = [
     tags: [],
     brand: 'Ysabel Mora',
     colors: ['white', 'black'],
-    images: [
-      '/src/assets/catalog/Ysabel_Mora/product6_1.jpg',
-      '/src/assets/catalog/Ysabel_Mora/product6_2.jpg'
-    ]
+    images: []
   }
 ]
-

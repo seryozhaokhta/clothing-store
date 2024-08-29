@@ -4,7 +4,7 @@
     <header>
         <div class="left-section">
             <router-link class="home-link" to="/">
-                <img src="@/assets/header/home.svg" alt="Home" />
+                <img src="@/assets/header/home.svg" alt="Home" class="home-icon" />
                 <span>{{ $t('home') }}</span>
             </router-link>
         </div>

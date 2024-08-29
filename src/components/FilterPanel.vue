@@ -5,11 +5,12 @@
         <h2>{{ $t('filters') }}</h2>
         <div class="filter-section">
             <h3>{{ $t('brands') }}</h3>
-            <ul>
-                <li v-for="brand in availableBrands" :key="brand">
-                    <label><input type="checkbox" v-model="localFilters.brands" :value="brand" /> {{ brand }}</label>
-                </li>
-            </ul>
+            <div class="button-list">
+                <button v-for="brand in availableBrands" :key="brand"
+                    :class="{ 'active': localFilters.brands.includes(brand) }" @click="toggleBrand(brand)">
+                    {{ brand }}
+                </button>
+            </div>
         </div>
         <div class="filter-section">
             <h3>{{ $t('price') }}</h3>
@@ -17,21 +18,20 @@
         </div>
         <div class="filter-section" v-if="availableColors.length">
             <h3>{{ $t('colors') }}</h3>
-            <ul class="color-palette">
-                <li v-for="color in availableColors" :key="color">
-                    <label :style="{ backgroundColor: color }">
-                        <input type="checkbox" v-model="localFilters.colors" :value="color" />
-                    </label>
-                </li>
-            </ul>
+            <div class="color-palette">
+                <button v-for="color in availableColors" :key="color"
+                    :class="{ 'active': localFilters.colors.includes(color) }" @click="toggleColor(color)"
+                    :style="{ backgroundColor: color }"></button>
+            </div>
         </div>
         <div class="filter-section">
             <h3>{{ $t('size') }}</h3>
-            <ul>
-                <li v-for="size in availableSizes" :key="size">
-                    <label><input type="checkbox" v-model="localFilters.sizes" :value="size" /> {{ size }}</label>
-                </li>
-            </ul>
+            <div class="button-list">
+                <button v-for="size in availableSizes" :key="size"
+                    :class="{ 'active': localFilters.sizes.includes(size) }" @click="toggleSize(size)">
+                    {{ size }}
+                </button>
+            </div>
         </div>
         <button class="reset-filters-button" @click="resetFilters">{{ $t('resetFilter') }}</button>
     </aside>
@@ -108,6 +108,33 @@ const availableColors = computed(() => {
     return [...new Set(colors)];
 });
 
+function toggleBrand(brand) {
+    const index = localFilters.value.brands.indexOf(brand);
+    if (index > -1) {
+        localFilters.value.brands.splice(index, 1);
+    } else {
+        localFilters.value.brands.push(brand);
+    }
+}
+
+function toggleColor(color) {
+    const index = localFilters.value.colors.indexOf(color);
+    if (index > -1) {
+        localFilters.value.colors.splice(index, 1);
+    } else {
+        localFilters.value.colors.push(color);
+    }
+}
+
+function toggleSize(size) {
+    const index = localFilters.value.sizes.indexOf(size);
+    if (index > -1) {
+        localFilters.value.sizes.splice(index, 1);
+    } else {
+        localFilters.value.sizes.push(size);
+    }
+}
+
 function resetFilters() {
     localFilters.value = {
         brands: [],
@@ -128,6 +155,11 @@ watch(localFilters, () => {
     width: 250px;
     padding: 20px;
     border-right: 1px solid #ddd;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .reset-filters-button {
@@ -140,86 +172,102 @@ watch(localFilters, () => {
     cursor: pointer;
     text-align: center;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .reset-filters-button:hover {
     background-color: #e73370;
 }
 
-.filter-section ul {
-    padding-left: 0;
-    list-style-type: none;
+.filter-section {
+    margin-bottom: 20px;
 }
 
 .filter-section h3 {
     margin-bottom: 10px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
 }
 
+.button-list,
 .color-palette {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.color-palette li label {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+.button-list button,
+.color-palette button {
+    padding: 8px 12px;
+    background-color: var(--highlight-background);
+    border-radius: 16px;
+    border: 1px solid #ddd;
     cursor: pointer;
-    border: 2px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.color-palette li label input {
-    display: none;
-}
-
-.color-palette li label input:checked {
+.button-list button.active,
+.color-palette button.active {
+    background-color: #ff4081;
+    color: #fff;
     border-color: #ff4081;
 }
 
-/* Dark Mode Styles */
-.filter-panel {
-    background-color: var(--background-color);
-    color: var(--text-color);
+.color-palette button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
 }
 
-.filter-panel h2,
-.filter-panel h3,
-.filter-panel label {
-    color: var(--text-color);
+.color-palette button.active {
+    border-color: #ff4081;
 }
 
-.reset-filters-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+/* Стили для слайдера */
+:deep(.slider-tooltip) {
+    --slider-track-bg: #ff4081;
+    --slider-thumb-bg: #ff4081;
+    --slider-thumb-border: #ff4081;
+    --slider-tooltip-bg: #ff4081;
+    --slider-tooltip-color: #fff;
 }
 
-.reset-filters-button:hover {
-    background-color: var(--primary-color-hover);
+:deep(.slider-connect) {
+    background-color: #ff4081;
 }
 
+:deep(.slider-thumb),
+:deep(.slider-thumb-lower),
+:deep(.slider-thumb-upper),
+:deep(.slider-thumb-active) {
+    box-shadow: none !important;
+    border: 2px solid #ff4081 !important;
+}
+
+:deep(.slider-thumb:hover),
+:deep(.slider-thumb:focus),
+:deep(.slider-thumb-lower:hover),
+:deep(.slider-thumb-lower:focus),
+:deep(.slider-thumb-upper:hover),
+:deep(.slider-thumb-upper:focus) {
+    box-shadow: 0 0 5px #ff4081 !important;
+}
+
+/* Адаптивные стили */
 @media (max-width: 768px) {
     .filter-panel {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
         border-right: none;
         border-bottom: 1px solid #ddd;
     }
 
-    .filter-section ul {
-        display: flex;
-        flex-wrap: wrap;
+    .button-list,
+    .color-palette {
+        flex-direction: column;
         gap: 10px;
-    }
-
-    .filter-section li {
-        width: 100%;
-    }
-
-    .filter-section label {
-        width: 100%;
-        display: block;
     }
 }
 </style>

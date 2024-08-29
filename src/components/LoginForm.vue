@@ -57,22 +57,22 @@ const login = async () => {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 12px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
 .login-form label {
-    display: block;
+
     margin-bottom: 5px;
 }
 
 .login-form input {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .login-form button {
@@ -81,7 +81,7 @@ const login = async () => {
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
 }
 

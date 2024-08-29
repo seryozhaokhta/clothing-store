@@ -2,49 +2,44 @@
 
 <template>
     <div class="product-card">
-        <div v-if="isLoading">
-            <div class="skeleton skeleton-image"></div>
-            <div class="skeleton skeleton-small-text"></div>
-            <div class="skeleton skeleton-text"></div>
-            <div class="skeleton skeleton-tag"></div>
-            <div class="skeleton-color-wrapper">
-                <div class="skeleton skeleton-color" v-for="index in 3" :key="index"></div>
-            </div>
-        </div>
+
+        <SkeletonLoader v-if="isLoading" />
+
         <div v-else>
-            <div class="product-images">
+            <div class="product-card__images">
                 <swiper :slides-per-view="1" :loop="true" @slideChange="onSlideChange">
                     <swiper-slide v-for="(image, index) in product.images" :key="index">
-                        <div class="image-wrapper">
+                        <div class="product-card__images-wrapper">
                             <img :src="loadedImages[index] ? image : '/src/assets/placeholder.png'"
                                 :alt="`${product.name} ${index + 1}`" @error="onImageError(index)"
-                                @load="onImageLoad(index)" />
+                                @load="onImageLoad(index)" loading="lazy" />
                         </div>
                     </swiper-slide>
                 </swiper>
-                <!-- Кастомные индикаторы -->
-                <div class="custom-pagination">
+                <div class="product-card__pagination">
                     <span v-for="(image, index) in product.images" :key="index"
-                        :class="{ 'active': currentSlide === index }"></span>
+                        :class="{ 'product-card__pagination-item--active': currentSlide === index }"
+                        class="product-card__pagination-item"></span>
                 </div>
             </div>
-            <div class="product-info">
-                <h3>{{ product.name }}</h3>
-                <p>{{ product.price }} {{ $t('currency') }}</p>
-                <div class="tags">
-                    <span v-for="tag in product.tags" :key="tag" class="tag">{{ $t(tag) }}</span>
-                    <span class="tag">{{ product.brand }}</span>
-                    <span v-for="size in product.sizes" :key="size" class="tag">{{ size }}</span>
+            <div class="product-card__info">
+                <h3 class="product-card__info-title">{{ product.name }}</h3>
+                <p class="product-card__info-price">{{ product.price }} {{ $t('currency') }}</p>
+                <div class="product-card__tags">
+                    <span v-for="tag in product.tags" :key="tag" class="product-card__tag">{{ $t(tag) }}</span>
+                    <span class="product-card__tag">{{ product.brand }}</span>
+                    <span v-for="size in product.sizes" :key="size" class="product-card__tag">{{ size }}</span>
                 </div>
-                <div class="colors">
+                <div class="product-card__colors">
                     <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: color }"
-                        class="color-circle"></span>
+                        class="product-card__color-circle"></span>
                 </div>
             </div>
-            <div class="product-actions">
-                <button @click="addToCart">{{ $t('addToCart') }}</button>
-                <button @click="toggleFavorite">
-                    <span :class="{ 'favorite': isFavorite }">❤</span>
+            <div class="product-card__actions">
+                <button class="product-card__actions-button" @click="addToCart">{{ $t('addToCart') }}</button>
+                <button class="product-card__actions-button" @click="toggleFavorite">
+                    <span :class="{ 'product-card__actions-favorite--active': isFavorite }"
+                        class="product-card__actions-favorite">❤</span>
                 </button>
             </div>
         </div>
@@ -52,6 +47,7 @@
 </template>
 
 <script setup>
+import SkeletonLoader from './SkeletonLoader.vue';
 import { ref, onMounted } from 'vue';
 import { useCartStore } from '@/stores/cart';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -115,149 +111,157 @@ const checkIfLoaded = () => {
 };
 
 onMounted(() => {
-    // Имитируем задержку для загрузки
     setTimeout(() => {
         checkIfLoaded();
-    }, 1000);
+    }, 700);
 });
 </script>
 
 <style scoped>
 .product-card {
-    width: calc(33.333% - 20px);
-    border: 1px solid #ddd;
-    padding: 10px;
+    width: 100%;
+    max-width: 350px;
+    max-height: auto;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--background-color);
     color: var(--text-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0 auto;
 }
 
-.product-images {
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card__images {
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 12px;
+    background-color: var(--skeleton-background);
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: auto;
+    justify-content: center;
 }
 
-.product-images img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.image-wrapper {
+.product-card__images img {
     width: 100%;
-    height: 100%;
-    position: relative;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.custom-pagination {
+.product-card:hover .product-card__images img {
+    transform: scale(1.05);
+}
+
+.product-card__pagination {
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+    gap: 5px;
     z-index: 10;
 }
 
-.custom-pagination span {
-    display: inline-block;
+.product-card__pagination-item {
     width: 8px;
     height: 8px;
-    margin: 0 4px;
-    background-color: var(--text-color);
+    background-color: var(--text-color-secondary);
     border-radius: 50%;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    opacity: 0.6;
+    transition: opacity 0.3s, background-color 0.3s;
+    cursor: pointer;
 }
 
-.custom-pagination span.active {
+.product-card__pagination-item--active {
     opacity: 1;
+    background-color: var(--highlight-background);
 }
 
-.product-info {
+.product-card__info {
+    margin-top: 15px;
+}
+
+.product-card__info-title {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.product-card__info-price {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    color: var(--text-color-secondary);
     margin-bottom: 10px;
 }
 
-.product-actions {
-    display: flex;
-    justify-content: space-between;
-}
-
-.favorite {
-    color: red;
-}
-
-.tags {
+.product-card__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-}
-
-.tag {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border-radius: 3px;
-    padding: 2px 5px;
-    font-size: 12px;
-}
-
-.colors {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.color-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-}
-
-/* Стили для скелетона */
-.skeleton {
-    background-color: #e0e0e0;
-    border-radius: 4px;
     margin-bottom: 10px;
 }
 
-.skeleton-image {
-    width: 100%;
-    height: 200px;
+.product-card__tag {
+    background-color: var(--highlight-background);
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: var(--font-weight-normal);
 }
 
-.skeleton-text {
-    width: 100%;
-    height: 20px;
-}
-
-.skeleton-small-text {
-    width: 60%;
-    height: 20px;
-    margin-bottom: 5px;
-}
-
-.skeleton-tag {
-    width: 40%;
-    height: 20px;
-    margin-bottom: 5px;
-}
-
-.skeleton-color-wrapper {
+.product-card__colors {
     display: flex;
     gap: 5px;
 }
 
-.skeleton-color {
+.product-card__color-circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    border: 1px solid var(--text-color-secondary);
+}
+
+.product-card__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.product-card__actions-button {
+    background-color: var(--highlight-background);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-card__actions-button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.product-card__actions-favorite {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.product-card__actions-favorite--active {
+    color: red;
 }
 </style>

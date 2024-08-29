@@ -107,18 +107,22 @@ function resetCategoryFilter() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f7f7f7;
-    padding: 10px 0;
+    background-color: var(--background-color);
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
     justify-content: center;
+    font-size: var(--font-size-medium);
 }
 
 .nav-links li {
@@ -128,9 +132,16 @@ function resetCategoryFilter() {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-    white-space: nowrap;
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #ff4081;
+    color: #fff;
 }
 
 .sub-links {
@@ -138,11 +149,13 @@ function resetCategoryFilter() {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: var(--background-color);
     list-style: none;
     padding: 10px 0;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 .nav-links li:hover .sub-links {
@@ -151,22 +164,37 @@ function resetCategoryFilter() {
 
 .sub-links li a {
     display: block;
-    padding: 5px 15px;
+    padding: 10px 20px;
     white-space: nowrap;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.sub-links li a:hover {
+    background-color: #ff4081;
+    color: #fff;
 }
 
 .reset-button {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    background: none;
+    margin-top: 20px;
+    background-color: #ff4081;
     border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    color: #333;
+    color: #fff;
+    font-size: var(--font-size-base);
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #e73370;
 }
 
 .reset-button img {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 /* Dark Mode Styles */
@@ -179,8 +207,10 @@ function resetCategoryFilter() {
     color: var(--text-color);
 }
 
-.nav-links a:hover {
-    color: #ff4081;
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #ff4081;
+    color: #fff;
 }
 
 .sub-links {
@@ -188,11 +218,20 @@ function resetCategoryFilter() {
     color: var(--text-color);
 }
 
-.reset-button {
-    color: var(--text-color);
+.sub-links li a:hover {
+    background-color: #ff4081;
+    color: #fff;
 }
 
-/* Responsive Styles */
+.reset-button {
+    background-color: #ff4081;
+    color: #fff;
+}
+
+.reset-button:hover {
+    background-color: #e73370;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
@@ -207,6 +246,8 @@ function resetCategoryFilter() {
 
     .reset-button {
         margin-top: 20px;
+        width: 100%;
+        text-align: center;
     }
 }
 </style>

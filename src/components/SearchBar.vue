@@ -27,10 +27,10 @@ function search() {
 
 .search-bar input {
     width: 200px;
-    padding: 5px;
+    padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 12px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -38,7 +38,7 @@ function search() {
 .search-bar button {
     padding: 5px 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 12px;
     background-color: var(--background-color);
     color: var(--text-color);
     cursor: pointer;

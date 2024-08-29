@@ -1,16 +1,16 @@
 <!-- src/pages/CatalogPage.vue -->
 
 <template>
-    <h1>{{ $t('catalog') }}</h1>
-    <div class="catalog-container">
+    <h1 class="catalog__title">{{ $t('catalog') }}</h1>
+    <div class="catalog__container">
         <CategoryFilter @filterCategory="applyCategoryFilter" @filterSubcategory="applySubcategoryFilter"
             @resetCategoryFilter="resetFilters" />
         <SearchBar @performSearch="performSearch" />
-        <div class="catalog-main">
+        <div class="catalog__main">
             <FilterPanel :filters="filters" :maxPrice="maxPrice" :currentCategory="currentCategory"
                 @applyFilters="applyFilters" @resetFilters="resetFilters" />
-            <main class="catalog-content">
-                <div class="product-grid">
+            <main class="catalog__content">
+                <div class="catalog__product-grid">
                     <ProductCard v-for="product in paginatedProducts" :key="product.id" :product="product"
                         @addToCart="addToCart" @toggleFavorite="toggleFavorite" />
                 </div>
@@ -168,87 +168,91 @@ onMounted(() => {
 });
 </script>
 
-
 <style scoped>
-.catalog-container {
+.catalog__title {
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.catalog__container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.catalog-main {
+.catalog__main {
     display: flex;
     flex-direction: row;
 }
 
-.catalog-content {
+.catalog__content {
     flex: 1;
     padding: 20px;
 }
 
-.product-grid {
+.catalog__product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .catalog-main {
+    .catalog__main {
         flex-direction: column;
     }
 
-    .filter-panel {
+    .catalog__filter-panel {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #ddd;
     }
 
+    .catalog__product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     .product-card {
+        max-width: 170px;
+        box-sizing: border-box;
+    }
+
+    .catalog__search-bar-input {
         width: 100%;
     }
 
-    .product-grid {
-        flex-direction: column;
-    }
-
-    .search-bar input {
-        width: 100%;
-    }
-
-    .search-bar {
+    .catalog__search-bar {
         flex-direction: column;
     }
 }
 
 /* Dark Mode Styles */
-.catalog-container {
+.catalog__container {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
-.catalog-content {
+.catalog__content {
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-.product-card {
+.catalog__filter-panel {
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-.filter-panel {
+.catalog__category-filter {
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-.category-filter {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.pagination {
+.catalog__pagination {
     background-color: var(--background-color);
     color: var(--text-color);
 }

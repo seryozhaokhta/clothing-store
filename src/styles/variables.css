@@ -1,9 +1,11 @@
 /* src/styles/variables.css */
 
 :root {
+  --icon-filter: none;
+
   --background-color: hsla(0, 0%, 95.5%, 1);
   --text-color: hsla(0, 0%, 0%, 1);
-  --header-background: hsla(0, 0%, 63%, 1);
+  --header-background: hsla(0, 0%, 63%, 0.1);
   --header-text-color: hsla(0, 0%, 20%, 1);
   --text-color-secondary: hsla(0, 0%, 50%, 1);
 
@@ -11,6 +13,12 @@
   --highlight-background: hsla(0, 0%, 100%, 1);
   --language-active-color: hsla(0, 0%, 0%, 1);
   --language-inactive-color: hsla(0, 0%, 50%, 1);
+
+  --border-cards: hsla(0, 0%, 50%, 1);
+
+  --skeleton-background: #e0e0e0; /* Цвет фона скелетона */
+  --skeleton-text-color: #d0d0d0; /* Цвет текста скелетона */
+  --skeleton-color: #c0c0c0; /* Цвет элементов скелетона */
 
   --font-family: 'Helvetica', sans-serif;
   --font-size-base: 16px;
@@ -22,14 +30,20 @@
 }
 
 [data-theme='dark'] {
-  --background-color: hsla(0, 0%, 7%, 1);
+  --icon-filter: invert(100%);
+
+  --background-color: hsla(0, 0%, 10%, 1);
   --text-color: hsla(0, 0%, 100%, 1);
-  --header-background: hsla(0, 0%, 12%, 1);
+  --header-background: hsla(0, 0%, 15%, 1);
   --header-text-color: hsla(0, 0%, 100%, 1);
   --text-color-secondary: hsla(0, 0%, 70%, 1);
 
   --language-switcher-background: hsla(0, 0%, 20%, 1);
-  --highlight-background: hsla(0, 0%, 40%, 1);
+  --highlight-background: hsla(0, 0%, 30%, 1);
   --language-active-color: hsla(0, 0%, 100%, 1);
   --language-inactive-color: hsla(0, 0%, 70%, 1);
+
+  --skeleton-background: #333; /* Цвет фона скелетона для темной темы */
+  --skeleton-text-color: #444; /* Цвет текста скелетона для темной темы */
+  --skeleton-color: #555; /* Цвет элементов скелетона для темной темы */
 }
