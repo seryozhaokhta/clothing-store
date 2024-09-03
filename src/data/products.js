@@ -8,13 +8,14 @@ export const products = [
     isFavorite: false,
     category: 'underwear',
     subcategory: 'bras',
-    sizes: ['34', '36', '38'],
+    sizes: [],
     tags: ['popular'],
     brand: 'Esotiq',
-    colors: ['green'],
+    colors: ['emerald'],
     images: [
-      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/dusnbwsngefermzfd8g2nsrlgzh3i1u2.jpg',
-      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/9g0bgre4gxc9gcb71vspqu0ywyer4lu8.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398050/dusnbwsngefermzfd8g2nsrlgzh3i1u2_ukz90k.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398050/9g0bgre4gxc9gcb71vspqu0ywyer4lu8_wrorbp.jpg',
+      
     ]
   },
   {
@@ -24,13 +25,13 @@ export const products = [
     isFavorite: false,
     category: 'underwear',
     subcategory: 'bras',
-    sizes: ['34', '36', '38'],
+    sizes: [],
     tags: ['popular'],
     brand: 'Esotiq',
-    colors: ['green'],
+    colors: ['emerald'],
     images: [
-      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/nwiipe65oqacwjfor4vn78l138843791.jpg',
-      '/src/assets/catalog/Esotiq/KORIN/bras/emerald/rsx5y7a7wh1x2554ffl3og1zlavxn61e.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398051/nwiipe65oqacwjfor4vn78l138843791_fwqxfx.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398051/rsx5y7a7wh1x2554ffl3og1zlavxn61e_asdnhb.jpg'
     ]
   },
   {
@@ -40,10 +41,10 @@ export const products = [
     isFavorite: false,
     category: 'underwear',
     subcategory: 'panties',
-    sizes: ['34', '36', '38'],
+    sizes: [],
     tags: ['popular'],
     brand: 'Esotiq',
-    colors: ['green'],
+    colors: ['emerald'],
     images: [
       '/src/assets/catalog/Esotiq/KORIN/panties/emerald/8d0p3flssitonnr4iskampd0cdpmr3d8.jpg',
       '/src/assets/catalog/Esotiq/KORIN/panties/emerald/y7jq6z6g60nh1kt2rudjmciwna84ylzj.jpg'
@@ -234,7 +235,9 @@ export const products = [
     tags: ['newArrivals', 'popular'],
     brand: 'Kris line',
     colors: ['black', 'white'],
-    images: []
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398066/fykrf4tsx7u9hous8aomz8xcjxwq9pfo_hynngd.jpg'
+    ]
   },
   {
     id: 15,

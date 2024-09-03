@@ -2,17 +2,15 @@
 
 <template>
     <div class="product-card">
-
         <SkeletonLoader v-if="isLoading" />
 
         <div v-else>
             <div class="product-card__images">
-                <swiper :slides-per-view="1" :loop="true" @slideChange="onSlideChange">
+                <swiper :slides-per-view="1" :loop="product.images.length > 1" @slideChange="onSlideChange">
                     <swiper-slide v-for="(image, index) in product.images" :key="index">
                         <div class="product-card__images-wrapper">
-                            <img :src="loadedImages[index] ? image : '/src/assets/placeholder.png'"
-                                :alt="`${product.name} ${index + 1}`" @error="onImageError(index)"
-                                @load="onImageLoad(index)" loading="lazy" />
+                            <img :src="image" :alt="`${product.name} ${index + 1}`" @load="onImageLoad()"
+                                loading="lazy" />
                         </div>
                     </swiper-slide>
                 </swiper>
@@ -64,7 +62,6 @@ const emit = defineEmits(['toggleFavorite']);
 
 const isFavorite = ref(props.product.isFavorite);
 const currentSlide = ref(0);
-const loadedImages = ref(Array(props.product.images.length).fill(true));
 const isLoading = ref(true);
 
 const cartStore = useCartStore();
@@ -93,26 +90,13 @@ const onSlideChange = (swiper) => {
     currentSlide.value = swiper.realIndex;
 };
 
-const onImageLoad = (index) => {
-    loadedImages.value[index] = true;
-    checkIfLoaded();
-};
-
-const onImageError = (index) => {
-    loadedImages.value[index] = false;
-    checkIfLoaded();
-    console.error(`Image not found for product ${props.product.name}, replacing with placeholder.`);
-};
-
-const checkIfLoaded = () => {
-    if (loadedImages.value.every((loaded) => loaded)) {
-        isLoading.value = false;
-    }
+const onImageLoad = () => {
+    isLoading.value = false;
 };
 
 onMounted(() => {
     setTimeout(() => {
-        checkIfLoaded();
+        isLoading.value = false;
     }, 700);
 });
 </script>

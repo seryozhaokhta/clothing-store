@@ -61,22 +61,22 @@ const localFilters = ref({ ...props.filters });
 const availableBrands = computed(() => [...new Set(Object.values(products).flat().map(product => product.brand))]);
 
 const sizesByBrand = {
-    'Kris line': ['S', 'M', 'L'],
-    'Subtille': ['M', 'L', 'XL'],
-    'Esotiq': ['34', '36', '38'],
+    'Kris line': ['S', 'M', 'L', 'XL'],
+    'Subtille': ['S', 'M', 'L', 'XL'],
+    'Esotiq': ['S', 'M', 'L', 'XL'],
     'Gorsenia': ['S', 'M', 'L', 'XL'],
-    'Kinga': ['34', '36'],
-    'Ysabel Mora': ['One Size'],
+    'Kinga': ['S', 'M', 'L', 'XL'],
+    'Ysabel Mora': ['S', 'M', 'L', 'XL'],
     'Jolidon': ['S', 'M', 'L', 'XL'],
-    'Melle': ['34', '36', '38', '40', '42'],
+    'Melle': ['S', 'M', 'L', 'XL'],
     'Julimex': ['S', 'M', 'L', 'XL'],
-    'Novika': ['M', 'L', 'XL']
+    'Novika': ['S', 'M', 'L', 'XL']
 };
 
 const colorsByBrand = {
     'Kris line': ['black', 'white'],
     'Subtille': ['blue', 'red'],
-    'Esotiq': ['pink', 'beige'],
+    'Esotiq': ['pink', 'beige', 'emerald'],
     'Gorsenia': ['black', 'gray'],
     'Kinga': ['white', 'beige'],
     'Ysabel Mora': ['black'],
