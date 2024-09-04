@@ -1,6 +1,7 @@
 // src/data/products.js
 
 export const products = [
+  // Esotiq
   {
     id: 1,
     name: 'KORIN',
@@ -14,8 +15,7 @@ export const products = [
     colors: ['emerald'],
     images: [
       'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398050/dusnbwsngefermzfd8g2nsrlgzh3i1u2_ukz90k.jpg',
-      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398050/9g0bgre4gxc9gcb71vspqu0ywyer4lu8_wrorbp.jpg',
-      
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398050/9g0bgre4gxc9gcb71vspqu0ywyer4lu8_wrorbp.jpg'
     ]
   },
   {
@@ -46,26 +46,31 @@ export const products = [
     brand: 'Esotiq',
     colors: ['emerald'],
     images: [
-      '/src/assets/catalog/Esotiq/KORIN/panties/emerald/8d0p3flssitonnr4iskampd0cdpmr3d8.jpg',
-      '/src/assets/catalog/Esotiq/KORIN/panties/emerald/y7jq6z6g60nh1kt2rudjmciwna84ylzj.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/8d0p3flssitonnr4iskampd0cdpmr3d8_ejxlxd.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/y7jq6z6g60nh1kt2rudjmciwna84ylzj_riaihw.jpg'
     ]
   },
+  // Gorsenia
   {
     id: 2,
-    name: 'Product 4',
+    name: 'Gorsenia',
     price: 180,
     isFavorite: false,
     category: 'home-wear',
-    subcategory: 'pajamas',
+    subcategory: 'bras',
     sizes: ['S', 'M'],
     tags: [],
     brand: 'Gorsenia',
-    colors: ['gray'],
-    images: []
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491829/6815957944_ir5esk.webp',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491829/6815957946_c4xihs.webp'
+    ]
   },
+  // Jolidon
   {
     id: 3,
-    name: 'Product 11',
+    name: 'S2360 NEG',
     price: 160,
     isFavorite: false,
     category: 'underwear',
@@ -73,9 +78,31 @@ export const products = [
     sizes: ['M', 'L'],
     tags: ['newArrivals'],
     brand: 'Jolidon',
-    colors: ['black', 'red'],
-    images: []
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490734/s2360-s2360.neg-3_pzml2u.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490734/s2360-s2360.neg-1_oxxyst.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490735/s2360-s2360.neg-2_qvdbyt.jpg'
+    ]
   },
+  {
+    id: 3,
+    name: 'S2360 NEG',
+    price: 160,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L'],
+    tags: ['newArrivals'],
+    brand: 'Jolidon',
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490734/d2360-d2360.neg-1_qfn4eu.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490734/d2360-d2360.neg-2_unrgqn.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490734/d2360-d2360.neg-3_psl8yu.jpg'
+    ]
+  },
+  // Julimex
   {
     id: 4,
     name: 'SIMPLE',
@@ -211,19 +238,38 @@ export const products = [
       '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/mn6dszy8xlw10szr9nc1ya4l5ralkar8.jpg'
     ]
   },
+  // Kinga
   {
     id: 13,
-    name: 'Product 5',
+    name: '1127-SC SAND ECRU',
     price: 120,
     isFavorite: false,
-    category: 'swimwear',
-    subcategory: 'bikinis',
+    category: 'underwear',
+    subcategory: 'bras',
     sizes: ['M', 'L'],
     tags: [],
     brand: 'Kinga',
-    colors: ['red'],
-    images: []
+    colors: ['nude'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491819/drw1l785a28wvc4yzmdgygnm9s3ckwy7_felwep.jpg'
+    ]
   },
+  {
+    id: 13,
+    name: '11273-B SAND ECRU',
+    price: 120,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L'],
+    tags: [],
+    brand: 'Kinga',
+    colors: ['nude'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491820/slw4t56h14fllkubwu8521h6gd17hd98_lldh40.jpg'
+    ]
+  },
+  // Kris line
   {
     id: 14,
     name: 'Product 1',
@@ -239,6 +285,7 @@ export const products = [
       'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398066/fykrf4tsx7u9hous8aomz8xcjxwq9pfo_hynngd.jpg'
     ]
   },
+  // Melle
   {
     id: 15,
     name: 'DALILA',
@@ -392,6 +439,7 @@ export const products = [
       '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg'
     ]
   },
+  // Novika
   {
     id: 24,
     name: 'Product 13',
@@ -405,6 +453,7 @@ export const products = [
     colors: ['white', 'beige'],
     images: []
   },
+  // Subtille
   {
     id: 25,
     name: 'Product 2',
@@ -418,6 +467,7 @@ export const products = [
     colors: ['blue', 'red'],
     images: []
   },
+  // Ysabel Mora
   {
     id: 26,
     name: 'Product 6',
@@ -428,6 +478,20 @@ export const products = [
     sizes: ['One Size'],
     tags: [],
     brand: 'Ysabel Mora',
+    colors: ['white', 'black'],
+    images: []
+  },
+  // Gracija-Rim
+  {
+    id: 27,
+    name: 'Product 6',
+    price: 220,
+    isFavorite: false,
+    category: 'socks-and-accessories',
+    subcategory: 'socks',
+    sizes: ['One Size'],
+    tags: [],
+    brand: 'Gracija-Rim',
     colors: ['white', 'black'],
     images: []
   }
