@@ -21,11 +21,12 @@ import HeroBanner from '@/components/HeroBanner.vue';
 import ImageGallery from '@/components/ImageGallery.vue';
 
 const images = ref([
-  { id: 1, src: 'path/to/image1.jpg', alt: 'Image 1' },
-  { id: 2, src: 'path/to/image2.jpg', alt: 'Image 2' },
-  { id: 3, src: 'path/to/image3.jpg', alt: 'Image 3' },
-  { id: 4, src: 'path/to/image4.jpg', alt: 'Image 4' },
+  { id: 1, src: 'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/8d0p3flssitonnr4iskampd0cdpmr3d8_ejxlxd.jpg', alt: 'Image 1' },
+  { id: 2, src: 'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/y7jq6z6g60nh1kt2rudjmciwna84ylzj_riaihw.jpg', alt: 'Image 2' },
+  { id: 3, src: 'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/8d0p3flssitonnr4iskampd0cdpmr3d8_ejxlxd.jpg', alt: 'Image 3' },
+  { id: 4, src: 'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/y7jq6z6g60nh1kt2rudjmciwna84ylzj_riaihw.jpg', alt: 'Image 4' },
 ]);
+
 
 onMounted(() => {
   gsap.from('.hero-section h1, .hero-section p', {

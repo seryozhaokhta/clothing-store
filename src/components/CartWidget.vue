@@ -20,29 +20,12 @@
             <div class="total">
                 <h3>{{ $t('totalPrice') }}: {{ totalPrice }} {{ $t('currency') }}</h3>
                 <button @click="clearCart">{{ $t('clearCart') }}</button>
-                <button class="purchase-button" @click="showPaymentForm = true">{{ $t('finalizePurchase') }}</button>
-            </div>
-            <div v-if="showPaymentForm" class="payment-form">
-                <h3>{{ $t('paymentDetails') }}</h3>
-                <form @submit.prevent="processPayment">
-                    <div class="form-group">
-                        <label for="name">{{ $t('name') }}</label>
-                        <input type="text" v-model="customerName" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="address">{{ $t('address') }}</label>
-                        <input type="text" v-model="customerAddress" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="card">{{ $t('cardDetails') }}</label>
-                        <input type="text" v-model="cardDetails" required />
-                    </div>
-                    <button type="submit" class="submit-button">{{ $t('payNow') }}</button>
-                </form>
+                <button class="telegram-button" @click="generateInvoice">{{ $t('sendInvoiceToTelegram') }}</button>
             </div>
             <div v-if="showConfirmation" class="order-confirmation">
-                <h2>{{ $t('orderConfirmation') }}</h2>
-                <p>{{ $t('orderConfirmedMessage') }}</p>
+                <h2>{{ $t('invoiceGenerated') }}</h2>
+                <p>{{ $t('contactViaTelegram') }}</p>
+                <a :href="telegramLink" target="_blank">{{ $t('openTelegram') }}</a>
             </div>
         </div>
     </div>
@@ -52,15 +35,15 @@
 import { ref } from 'vue';
 import { useCartStore } from '@/stores/cart';
 import { storeToRefs } from 'pinia';
+import { useI18n } from 'vue-i18n'; // Импортируем I18n для поддержки $t
+
+const { t } = useI18n(); // Получаем функцию t для использования в компоненте
 
 const cartStore = useCartStore();
 const { cartItems, totalPrice } = storeToRefs(cartStore);
 
-const showPaymentForm = ref(false);
 const showConfirmation = ref(false);
-const customerName = ref('');
-const customerAddress = ref('');
-const cardDetails = ref('');
+const telegramLink = ref('');
 
 const removeFromCart = (productId) => {
     cartStore.removeFromCart(productId);
@@ -70,19 +53,17 @@ const clearCart = () => {
     cartStore.clearCart();
 };
 
-const processPayment = () => {
-    // Здесь добавляется логика для обработки платежа
-    console.log('Обработка платежа...');
-    console.log('Имя:', customerName.value);
-    console.log('Адрес:', customerAddress.value);
-    console.log('Детали карты:', cardDetails.value);
+const generateInvoice = () => {
+    // Формируем чек в виде строки
+    const invoiceDetails = cartItems.value.map(item => `${item.name} x${item.quantity}: ${item.price}`).join('\n');
+    const total = `\n${t('totalPrice')}: ${totalPrice.value} ${t('currency')}`;
 
-    // Если всё успешно, показываем подтверждение
-    showPaymentForm.value = false;
+    // Ссылка на Telegram с чеком
+    const message = encodeURIComponent(`Order details:\n${invoiceDetails}\n${total}`);
+    telegramLink.value = `https://t.me/your_assistant_bot?text=${message}`;
+
+    // Показываем подтверждение
     showConfirmation.value = true;
-
-    // Очищаем корзину после успешного заказа
-    cartStore.clearCart();
 };
 </script>
 
@@ -135,47 +116,22 @@ button:hover {
     margin-top: 20px;
 }
 
-.purchase-button {
-    background-color: #4caf50;
+.telegram-button {
+    background-color: #0088cc;
     color: white;
     margin-left: 10px;
 }
 
-.purchase-button:hover {
-    background-color: #45a049;
-}
-
-.payment-form {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #4caf50;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    border-radius: 8px;
-}
-
-.payment-form .form-group {
-    margin-bottom: 15px;
-}
-
-.submit-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.submit-button:hover {
-    background-color: #45a049;
+.telegram-button:hover {
+    background-color: #0077b3;
 }
 
 .order-confirmation {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid #4caf50;
-    background-color: #e8f5e9;
-    color: #2e7d32;
+    border: 1px solid #0088cc;
+    background-color: #e0f7fa;
+    color: #006064;
     border-radius: 8px;
 }
 

@@ -1,8 +1,12 @@
 // src/i18n/en.js
 
 export default {
-  generalWelcome: 'New Melle collection',
-  generalSubtitle: 'dsfdsf',
+  melleCollectionHeroBanner: 'New Melle Collection',
+  melleSubtitle: 'Elegance and comfort for every day',
+  gracijaCollectionHeroBanner: 'New Gracija-Rim Collection',
+  gracijaSubtitle: 'Exquisite designs for special moments',
+  julimexCollectionHeroBanner: 'New Julimex Collection',
+  julimexSubtitle: 'Style and comfort in every move',
   welcome: 'Gabriel store',
   home: 'Home',
   subtitle: 'Your one-stop shop for fashion',
@@ -77,6 +81,10 @@ export default {
   search: 'Search',
   popular: 'Popular',
   resetFilter: 'Reset Filter',
+  sendInvoiceToTelegram: 'Send invoice to Telegram',
+  invoiceGenerated: 'Invoice Generated',
+  contactViaTelegram: 'Contact via Telegram',
+  openTelegram: 'Open Telegram',
   footer: {
     company: 'Company',
     about: 'About Us',
@@ -97,4 +105,3 @@ export default {
     title: 'Our Gallery'
   }
 }
-

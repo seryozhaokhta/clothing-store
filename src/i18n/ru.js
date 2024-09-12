@@ -1,8 +1,12 @@
 // src/i18n/ru.js
 
 export default {
-  generalWelcome: 'Новая коллекция Melle',
-  generalSubtitle: 'вавава',
+  melleCollectionHeroBanner: 'Новая коллекция Melle',
+  melleSubtitle: 'Элегантность и комфорт на каждый день',
+  gracijaCollectionHeroBanner: 'Новая коллекция Gracija-Rim',
+  gracijaSubtitle: 'Изысканные дизайны для особенных моментов',
+  julimexCollectionHeroBanner: 'Новая коллекция Julimex',
+  julimexSubtitle: 'Стиль и комфорт в каждом движении',
   welcome: 'Магазин Габриель',
   home: 'Главная',
   subtitle: 'Ваш универсальный магазин моды',
@@ -77,6 +81,10 @@ export default {
   search: 'Найти',
   popular: 'Популярное',
   resetFilter: 'Сбросить фильтр',
+  sendInvoiceToTelegram: 'Отправить чек в Telegram',
+  invoiceGenerated: 'Чек сформирован',
+  contactViaTelegram: 'Свяжитесь через Telegram',
+  openTelegram: 'Открыть Telegram',
   footer: {
     company: 'Компания',
     about: 'О нас',
@@ -97,4 +105,3 @@ export default {
     title: 'Наша галерея'
   }
 }
-
