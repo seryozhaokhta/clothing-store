@@ -8,8 +8,8 @@
         </section>
         <section class="contact-page__info">
             <h2 class="contact-page__info-title">{{ $t('contactInfoTitle') }}</h2>
-            <p class="contact-page__info-text">{{ $t('phone') }}: +123456789</p>
-            <p class="contact-page__info-text">{{ $t('email') }}: contact@gabrielstore.com</p>
+            <p class="contact-page__info-text">{{ $t('phone') }}: +7 (921) 951-49-74</p>
+            <p class="contact-page__info-text">{{ $t('email') }}: tatyana_vasilieva8@mail.ru</p>
             <div class="contact-page__map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1110.6206512051435!2d40.47461493054167!3d56.17022147239224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414c7b179b335d2f%3A0xa08027e0d27f33db!2z0JLQvtGB0YLQvtC6LTE!5e0!3m2!1sru!2sge!4v1723028702476!5m2!1sru!2sge"

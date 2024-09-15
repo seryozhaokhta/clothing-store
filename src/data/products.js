@@ -484,15 +484,19 @@ export const products = [
   // Gracija-Rim
   {
     id: 27,
-    name: 'Product 6',
-    price: 220,
+    name: 'ASSOL 10030',
+    price: 9500,
     isFavorite: false,
     category: 'socks-and-accessories',
     subcategory: 'socks',
     sizes: ['One Size'],
     tags: [],
     brand: 'Gracija-Rim',
-    colors: ['white', 'black'],
-    images: []
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490240/BRAFF-Gracija-Rim-ASSOL-10030-03_tjyyi8.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490240/BRAFF-Gracija-Rim-ASSOL-10030-04_oiectk.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725490240/BRAFF-Gracija-Rim-ASSOL-10030-02_zvq3c2.jpg'
+    ]
   }
 ]
