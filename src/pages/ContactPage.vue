@@ -1,16 +1,16 @@
 <!-- src/pages/ContactPage.vue -->
 
 <template>
-    <div class="contactpage-container">
-        <section class="contact-section">
-            <h1>{{ $t('contact') }}</h1>
-            <p>{{ $t('contactParagraph') }}</p>
+    <div class="contact-page">
+        <section class="contact-page__section">
+            <h1 class="contact-page__title">{{ $t('contact') }}</h1>
+            <p class="contact-page__description">{{ $t('contactParagraph') }}</p>
         </section>
-        <section class="contact-info">
-            <h2>{{ $t('contactInfoTitle') }}</h2>
-            <p>{{ $t('phone') }}: +123456789</p>
-            <p>{{ $t('email') }}: contact@gabrielstore.com</p>
-            <div class="map-container">
+        <section class="contact-page__info">
+            <h2 class="contact-page__info-title">{{ $t('contactInfoTitle') }}</h2>
+            <p class="contact-page__info-text">{{ $t('phone') }}: +123456789</p>
+            <p class="contact-page__info-text">{{ $t('email') }}: contact@gabrielstore.com</p>
+            <div class="contact-page__map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1110.6206512051435!2d40.47461493054167!3d56.17022147239224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414c7b179b335d2f%3A0xa08027e0d27f33db!2z0JLQvtGB0YLQvtC6LTE!5e0!3m2!1sru!2sge!4v1723028702476!5m2!1sru!2sge"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -29,100 +29,89 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     nextTick(() => {
-        const contactSection = document.querySelectorAll('.contact-section h1, .contact-section p');
-        const contactInfo = document.querySelectorAll('.contact-info h2, .contact-info p');
+        gsap.from('.contact-page__title, .contact-page__description', {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            ease: 'power2.out',
+            stagger: 0.3,
+        });
 
-        if (contactSection.length) {
-            gsap.from(contactSection, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                ease: 'power2.out',
-                stagger: 0.3,
-            });
-        } else {
-            console.error('GSAP: target .contact-section h1, .contact-section p not found');
-        }
+        gsap.from('.contact-page__info-title, .contact-page__info-text', {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            ease: 'power2.out',
+            stagger: 0.3,
+        });
 
-        if (contactInfo.length) {
-            gsap.from(contactInfo, {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                ease: 'power2.out',
-                stagger: 0.3,
-            });
-        } else {
-            console.error('GSAP: target .contact-info h2, .contact-info p not found');
-        }
-
-        const mapContainer = document.querySelector('.map-container');
-        if (mapContainer) {
-            gsap.from(mapContainer, {
-                opacity: 0,
-                scale: 0.9,
-                duration: 1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: '.map-container',
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    scrub: true,
-                },
-            });
-        } else {
-            console.error('GSAP: target .map-container not found');
-        }
+        gsap.from('.contact-page__map', {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.contact-page__map',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                scrub: true,
+            },
+        });
     });
 });
 </script>
 
 <style scoped>
-.contactpage-container {
+.contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    /* Центрируем содержимое */
+    padding: 40px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-.contact-section {
+.contact-page__section {
     text-align: center;
+    /* Центрируем текст */
     margin-bottom: 50px;
+    max-width: 800px;
 }
 
-.contact-section h1 {
+.contact-page__title {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     margin-bottom: 20px;
 }
 
-.contact-section p {
+.contact-page__description {
     font-size: var(--font-size-medium);
     color: var(--text-color-secondary);
-    font-weight: var(--font-weight-light);
+    line-height: 1.6;
+    text-align: left;
 }
 
-.contact-info {
+.contact-page__info {
     text-align: center;
+    /* Центрируем текст */
     margin-bottom: 50px;
+    max-width: 800px;
 }
 
-.contact-info h2 {
-    font-size: var(--font-size-medium);
+.contact-page__info-title {
+    font-size: 1.75rem;
     font-weight: var(--font-weight-normal);
     margin-bottom: 20px;
 }
 
-.contact-info p {
-    font-size: var(--font-size-base);
+.contact-page__info-text {
+    font-size: 1rem;
     color: var(--text-color-secondary);
-    font-weight: var(--font-weight-light);
+    margin-bottom: 10px;
 }
 
-.map-container {
+.contact-page__map {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -132,3 +121,4 @@ onMounted(() => {
     transition: transform 0.3s;
 }
 </style>
+

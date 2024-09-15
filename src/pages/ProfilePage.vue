@@ -75,12 +75,15 @@ const logout = () => {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--background-alt-color);
+    border-radius: 10px;
 }
 
 .logout-button {
     background-color: #ff4d4f;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -94,17 +97,22 @@ const logout = () => {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-around;
 }
 
 .product-card {
     width: calc(33.333% - 20px);
     border: 1px solid #ddd;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 15px;
     background-color: var(--background-color);
     color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .product-info {
@@ -125,27 +133,18 @@ const logout = () => {
     text-decoration: underline;
 }
 
-.favorite {
-    color: red;
-}
-
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    margin-top: 10px;
 }
 
 .tag {
-    background-color: var(--background-color);
+    background-color: #f0f0f0;
     color: var(--text-color);
     border-radius: 3px;
-    padding: 2px 5px;
+    padding: 2px 8px;
     font-size: 12px;
-}
-
-/* Dark Mode Styles */
-.product-card {
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 </style>

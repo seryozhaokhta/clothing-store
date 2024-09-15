@@ -1,21 +1,31 @@
 <!-- src/components/HeroBanner.vue -->
 
 <template>
-    <div class="hero-banner" :style="{ backgroundImage: `url(${currentCollection.image})` }">
-        <div class="hero-content">
-            <h1>{{ currentCollection.title }}</h1>
-            <p>{{ currentCollection.subtitle }}</p>
-        </div>
+    <div class="hero-banner">
+        <!-- Обёртка для изображений с переходом -->
+        <transition name="fade" mode="out-in">
+            <div :key="currentCollection.id" class="hero-image"
+                :style="{ backgroundImage: `url(${currentCollection.image})` }"></div>
+        </transition>
+
+        <!-- Обёртка для текста с переходом -->
+        <transition name="fade-up" mode="out-in">
+            <div class="hero-content" :key="currentCollection.id">
+                <h1>{{ currentCollection.title }}</h1>
+                <p>{{ currentCollection.subtitle }}</p>
+            </div>
+        </transition>
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from 'vue';
-import { gsap } from 'gsap';
 import { useI18n } from 'vue-i18n';
 
+// Получение переводов
 const { t, locale } = useI18n();
 
+// Коллекции с изображениями и текстом
 const collections = ref([
     {
         id: 1,
@@ -37,9 +47,11 @@ const collections = ref([
     },
 ]);
 
+// Индекс текущей коллекции
 const currentCollectionIndex = ref(0);
 const currentCollection = ref(collections.value[currentCollectionIndex.value]);
 
+// Обновление заголовков и подзаголовков при изменении локали
 const updateCollectionTitles = () => {
     collections.value[0].title = t('melleCollectionHeroBanner');
     collections.value[0].subtitle = t('melleSubtitle');
@@ -50,95 +62,105 @@ const updateCollectionTitles = () => {
     currentCollection.value = collections.value[currentCollectionIndex.value];
 };
 
+// Функция смены слайда
 const changeSlide = () => {
     currentCollectionIndex.value = (currentCollectionIndex.value + 1) % collections.value.length;
     currentCollection.value = collections.value[currentCollectionIndex.value];
-
-    gsap.from('.hero-content h1, .hero-content p', {
-        opacity: 0,
-        ease: 'power2.out',
-    });
-
-    gsap.from('.hero-image', {
-        opacity: 0,
-        ease: 'power2.out',
-    });
 };
 
-
+// Монтирование компонента
 onMounted(() => {
     updateCollectionTitles();
-
-    gsap.from('.hero-content h1, .hero-content p', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power2.out',
-        stagger: 0.2,
-    });
-
-    gsap.from('.hero-banner', {
-        opacity: 0,
-        duration: 1.5,
-        ease: 'power2.out',
-    });
-
-    setInterval(changeSlide, 5000); // Меняем слайды каждые 5 секунд
+    setInterval(changeSlide, 5000); // Смена слайдов каждые 5 секунд
 });
 
-// Обновляем названия коллекций при изменении локали
-watch(locale, updateCollectionTitles);
+// Обновление заголовков при изменении локали
+watch(locale, () => {
+    updateCollectionTitles();
+});
 </script>
 
 <style scoped>
 .hero-banner {
+    position: relative;
     width: 100%;
     height: 1080px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    color: white;
-    position: relative;
-    padding-left: 5%;
-    transition: background-image 1s ease;
+    justify-content: flex-start;
+    background-color: var(--background-color);
+    overflow: hidden;
+    /* Фоновый цвет на время загрузки изображений */
 }
 
-.hero-banner::before {
-    content: '';
+/* Стили для изображений */
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/* Стили для контента */
 .hero-content {
-    text-align: left;
+    position: relative;
     z-index: 1;
+    text-align: left;
+    padding-left: 5%;
     max-width: 600px;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
     color: var(--text-color);
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    color: #ccc;
+/* Переходы для изображений */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s ease;
 }
 
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* Переходы для текста с небольшим сдвигом вверх */
+.fade-up-enter-active,
+.fade-up-leave-active {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up-enter-from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-up-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .hero-banner {
         height: 600px;
         padding-left: 2%;
+        flex-direction: column;
+        justify-content: flex-end;
+        /* Размещаем контент внизу */
+        align-items: center;
+        /* Центрируем горизонтально */
+    }
+
+    .hero-content {
+        padding-left: 0;
+        padding: 20px;
+        text-align: left;
+        background-color: var(--background-color);
+        /* Добавим полупрозрачный фон для лучшей читаемости */
+        width: 100%;
     }
 
     .hero-content h1 {
@@ -147,6 +169,11 @@ watch(locale, updateCollectionTitles);
 
     .hero-content p {
         font-size: 1.2rem;
+    }
+
+    .hero-image {
+        background-size: cover;
+        /* Лучше заполняет пространство на мобильных */
     }
 }
 </style>

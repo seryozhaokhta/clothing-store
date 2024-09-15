@@ -70,7 +70,8 @@ const generateInvoice = () => {
 <style scoped>
 .cart-widget {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px;
+    /* Добавим больше отступов */
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -86,12 +87,20 @@ const generateInvoice = () => {
     border: 1px solid #ddd;
     padding: 10px;
     gap: 15px;
+    background-color: white;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.cart-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item__image {
     width: 80px;
     height: auto;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .cart-item__details {
@@ -105,6 +114,7 @@ button {
     background-color: var(--button-background);
     color: var(--button-text);
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -145,3 +155,4 @@ button:hover {
     margin-bottom: 15px;
 }
 </style>
+

@@ -53,44 +53,62 @@ const login = async () => {
 
 <style scoped>
 .login-form {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 25px;
     border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: var(--background-color);
-    color: var(--text-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Убедимся, что padding и ширина корректно рассчитываются */
 }
 
 .login-form label {
-
     margin-bottom: 5px;
+    display: block;
 }
 
 .login-form input {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-bottom: 10px;
+    width: 100%;
+    /* Полная ширина контейнера */
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
+    /* Корректно учитываем padding */
 }
 
 .login-form button {
     width: 100%;
-    padding: 10px;
+    /* Полная ширина для кнопки */
+    padding: 12px;
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    /* Корректно учитываем padding */
 }
 
 .login-form button:hover {
     background-color: #555;
 }
 
-p {
+.login-form p {
     margin-top: 10px;
     text-align: center;
+}
+
+.login-form a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
 }
 </style>

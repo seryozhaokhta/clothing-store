@@ -1,14 +1,15 @@
 <!-- src/pages/HomePage.vue -->
 
 <template>
-  <div class="homepage-container">
+  <div class="homepage">
+    <h1 class="homepage__title">{{ $t('welcome') }}</h1>
+    <p class="homepage__subtitle">{{ $t('subtitle') }}</p>
     <HeroBanner />
-    <section class="hero-section">
+    <section class="homepage__hero-section">
+      <!-- Содержимое секции -->
     </section>
-    <h1>{{ $t('welcome') }}</h1>
-    <p>{{ $t('subtitle') }}</p>
-    <section class="gallery-section">
-      <h2>{{ $t('gallerySection.title') }}</h2>
+    <section class="homepage__gallery-section">
+      <h2 class="homepage__gallery-title">{{ $t('gallerySection.title') }}</h2>
       <ImageGallery :images="images" />
     </section>
   </div>
@@ -27,20 +28,27 @@ const images = ref([
   { id: 4, src: 'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398053/y7jq6z6g60nh1kt2rudjmciwna84ylzj_riaihw.jpg', alt: 'Image 4' },
 ]);
 
-
 onMounted(() => {
-  gsap.from('.hero-section h1, .hero-section p', {
+  gsap.from('.homepage__title, .homepage__subtitle', {
     opacity: 0,
-    y: 20,
+    y: 20,  // Появление снизу вверх
     duration: 1,
     ease: 'power2.out',
-    stagger: 0.3,
+    stagger: 0.3,  // Задержка между анимациями
+  });
+
+  gsap.from('.homepage__gallery-title', {
+    opacity: 0,
+    y: 20,  // Появление снизу вверх для заголовка галереи
+    duration: 1,
+    ease: 'power2.out',
+    delay: 0.5,  // Добавляем задержку
   });
 });
 </script>
 
 <style scoped>
-.homepage-container {
+.homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,33 +57,38 @@ onMounted(() => {
   color: var(--text-color);
 }
 
-.hero-section {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.hero-section h1 {
+.homepage__title {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.hero-section p {
+.homepage__subtitle {
   font-size: var(--font-size-medium);
   color: var(--text-color-secondary);
   font-weight: var(--font-weight-light);
 }
 
-.gallery-section {
+.homepage__hero-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.homepage__gallery-section {
   width: 100%;
   padding: 50px 20px;
   background-color: var(--background-alt-color);
   text-align: center;
+  padding-bottom: 300px;
+  overflow: visible;
+  /* Убедимся, что содержимое не обрезается */
 }
 
-.gallery-section h2 {
+.homepage__gallery-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
   color: var(--text-color);
 }
 </style>
+

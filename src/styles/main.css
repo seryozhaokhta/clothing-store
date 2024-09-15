@@ -4,6 +4,11 @@
 @import './header.css';
 @import './footer.css';
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
@@ -18,7 +23,12 @@ p {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-bold);
   margin: 0 0 10px;
 }

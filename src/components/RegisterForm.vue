@@ -51,13 +51,15 @@ const register = async () => {
 
 <style scoped>
 .register-form {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 25px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: var(--background-color);
-    color: var(--text-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Убедимся, что padding и ширина корректно рассчитываются */
 }
 
 .register-form label {
@@ -67,20 +69,27 @@ const register = async () => {
 
 .register-form input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    /* Полная ширина контейнера */
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Корректно учитываем padding */
 }
 
 .register-form button {
     width: 100%;
-    padding: 10px;
+    /* Полная ширина для кнопки */
+    padding: 12px;
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    /* Корректно учитываем padding */
 }
 
 .register-form button:hover {
