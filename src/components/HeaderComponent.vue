@@ -14,7 +14,6 @@
                 <li><router-link to="/cart">{{ $t('cart') }}</router-link></li>
                 <li><router-link to="/contact">{{ $t('contact') }}</router-link></li>
                 <li><router-link to="/about">{{ $t('about') }}</router-link></li>
-                <li><router-link to="/profile">{{ $t('profile') }}</router-link></li>
             </ul>
         </nav>
         <div class="burger-menu" @click="toggleDrawer">
@@ -47,7 +46,6 @@
                 <li><router-link @click="closeDrawer" to="/cart">{{ $t('cart') }}</router-link></li>
                 <li><router-link @click="closeDrawer" to="/contact">{{ $t('contact') }}</router-link></li>
                 <li><router-link @click="closeDrawer" to="/about">{{ $t('about') }}</router-link></li>
-                <li><router-link @click="closeDrawer" to="/profile">{{ $t('profile') }}</router-link></li>
                 <li class="drawer-locale">
                     <div class="language-toggle">
                         <div class="highlight" :style="highlightStyle"></div>
@@ -79,7 +77,7 @@ const { locale } = useI18n();
 const isDarkMode = ref(false);
 const drawer = ref(false);
 
-const themeIcon = computed(() => isDarkMode.value ? darkModeIcon : lightModeIcon);
+const themeIcon = computed(() => (isDarkMode.value ? darkModeIcon : lightModeIcon));
 
 const enButton = ref(null);
 const ruButton = ref(null);
@@ -87,10 +85,17 @@ const enButtonDrawer = ref(null);
 const ruButtonDrawer = ref(null);
 
 const highlightStyle = computed(() => {
-    const button = locale.value === 'en' ? (drawer.value ? enButtonDrawer.value : enButton.value) : (drawer.value ? ruButtonDrawer.value : ruButton.value);
+    const button =
+        locale.value === 'en'
+            ? drawer.value
+                ? enButtonDrawer.value
+                : enButton.value
+            : drawer.value
+                ? ruButtonDrawer.value
+                : ruButton.value;
     return {
         left: `${button?.offsetLeft}px`,
-        width: `${button?.offsetWidth}px`
+        width: `${button?.offsetWidth}px`,
     };
 });
 
@@ -103,7 +108,14 @@ function toggleTheme() {
 function changeLocale(lang) {
     locale.value = lang;
     nextTick(() => {
-        const button = lang === 'en' ? (drawer.value ? enButtonDrawer.value : enButton.value) : (drawer.value ? ruButtonDrawer.value : ruButton.value);
+        const button =
+            lang === 'en'
+                ? drawer.value
+                    ? enButtonDrawer.value
+                    : enButton.value
+                : drawer.value
+                    ? ruButtonDrawer.value
+                    : ruButton.value;
         button.focus();
     });
 }

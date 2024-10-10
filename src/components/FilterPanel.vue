@@ -259,7 +259,7 @@ watch(localFilters, () => {
 /* Адаптивные стили */
 @media (max-width: 768px) {
     .filter-panel {
-        width: 100%;
+        width: auto;
         padding: 15px;
         margin-bottom: 20px;
         border-right: none;
@@ -268,7 +268,7 @@ watch(localFilters, () => {
 
     .button-list,
     .color-palette {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 }

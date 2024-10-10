@@ -52,7 +52,7 @@ export const products = [
   },
   // Gorsenia
   {
-    id: 2,
+    id: 4,
     name: 'Gorsenia',
     price: 180,
     isFavorite: false,
@@ -69,7 +69,7 @@ export const products = [
   },
   // Jolidon
   {
-    id: 3,
+    id: 5,
     name: 'S2360 NEG',
     price: 160,
     isFavorite: false,
@@ -86,7 +86,7 @@ export const products = [
     ]
   },
   {
-    id: 3,
+    id: 6,
     name: 'S2360 NEG',
     price: 160,
     isFavorite: false,
@@ -104,77 +104,145 @@ export const products = [
   },
   // Julimex
   {
-    id: 4,
-    name: 'SIMPLE',
-    price: 170,
-    isFavorite: false,
-    category: 'underwear',
-    subcategory: 'bra',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Julimex',
-    colors: ['black'],
-    images: [
-      '/src/assets/catalog/Julimex/SIMPLE/bra/black/dbt77e906f5b3fin39hyimegd4eb2379.png',
-      '/src/assets/catalog/Julimex/SIMPLE/bra/black/dtqbjbit1c7k9a7z13pet06daoav1ibw.png',
-      '/src/assets/catalog/Julimex/SIMPLE/bra/black/vmqqpterh9talvazaxzkjuixoqlyy16l.png'
-    ]
-  },
-  {
-    id: 5,
-    name: 'SIMPLE',
-    price: 170,
-    isFavorite: false,
-    category: 'underwear',
-    subcategory: 'bra',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Julimex',
-    colors: ['nude'],
-    images: [
-      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/2pqaewql5ohoojbubpn2uglnudt3pju6.png',
-      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/9hj6vp2z4xd1jtgpolspn090wgnki23a.png',
-      '/src/assets/catalog/Julimex/SIMPLE/bra/flash/f0ascrnvmtg3nx328bm8c93tpyqzfae7.png'
-    ]
-  },
-  {
-    id: 6,
-    name: 'INFINITY',
-    price: 170,
-    isFavorite: false,
-    category: 'underwear',
-    subcategory: 'bodysuits',
-    sizes: ['M', 'L', 'XL'],
-    tags: ['newArrivals'],
-    brand: 'Julimex',
-    colors: ['black'],
-    images: [
-      '/src/assets/catalog/Julimex/INFINITY/top/black/7m58up5kruescl94z74g3buyeio1df67.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/top/black/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/top/black/x1ikd63w2vcsifsz6cuqvuued028o6l3.jpg'
-    ]
-  },
-  {
     id: 7,
-    name: 'INFINITY',
-    price: 170,
+    name: 'SIMPLE бюст',
+    price: 3200,
     isFavorite: false,
     category: 'underwear',
-    subcategory: 'bodysuits',
+    subcategory: 'bra',
     sizes: ['M', 'L', 'XL'],
     tags: ['newArrivals'],
     brand: 'Julimex',
     colors: ['nude'],
     images: [
-      '/src/assets/catalog/Julimex/INFINITY/top/black/7m58up5kruescl94z74g3buyeio1df67.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/top/black/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/top/black/x1ikd63w2vcsifsz6cuqvuued028o6l3.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398066/f0ascrnvmtg3nx328bm8c93tpyqzfae7_hid5dc.png',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398065/9hj6vp2z4xd1jtgpolspn090wgnki23a_ffagq1.png',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398065/2pqaewql5ohoojbubpn2uglnudt3pju6_uwxwo4.png'
+    ]
+  },
+  {
+    id: 8,
+    name: 'SIMPLE бюст',
+    price: 3200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398064/dbt77e906f5b3fin39hyimegd4eb2379_nrhdus.png',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398064/dtqbjbit1c7k9a7z13pet06daoav1ibw_idutbu.png',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398065/vmqqpterh9talvazaxzkjuixoqlyy16l_oyzryt.png'
     ]
   },
   {
     id: 9,
+    name: 'INFINITY TOP бюст',
+    price: 3200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398063/obgggx7o0yq7qfuxrwlbxaxfk3j6sjor_ebk5lf.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398062/92jo5c0h23iag6pxaphld6xsqw74edpc_qa10pi.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398061/268uoti5bw862552d08tky46pd1p33ad_a3xfep.jpg'
+    ]
+  },
+  {
+    id: 10,
+    name: 'INFINITY TOP бюст',
+    price: 3200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0_pnagfp.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/x1ikd63w2vcsifsz6cuqvuued028o6l3_rnen3x.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/7m58up5kruescl94z74g3buyeio1df67_drzhmc.jpg'
+    ]
+  },
+  {
+    id: 11,
+    name: 'INFINITY TOP SOFT бюст',
+    price: 3200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398063/obgggx7o0yq7qfuxrwlbxaxfk3j6sjor_ebk5lf.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398062/92jo5c0h23iag6pxaphld6xsqw74edpc_qa10pi.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398061/268uoti5bw862552d08tky46pd1p33ad_a3xfep.jpg'
+    ]
+  },
+  {
+    id: 12,
+    name: 'INFINITY TOP SOFT бюст',
+    price: 3200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bra',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/c5kcgstokvsbjpiz3jdvu0r4g47c3sd0_pnagfp.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/x1ikd63w2vcsifsz6cuqvuued028o6l3_rnen3x.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398060/7m58up5kruescl94z74g3buyeio1df67_drzhmc.jpg'
+    ]
+  },
+  {
+    id: 13,
+    name: 'INFINITY MAXI',
+    price: 1200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bodysuits',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/114jv2vyuhkvfxxs067m23ls51p6f4i4_t5vawk.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/yw2im0jciaiodu2wwipnbjpccivv3fgk_o6pbwg.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/c89nm7zssrx8p00zp88vn68ephtk2co2_b6i9g9.jpg'
+    ]
+  },
+  {
+    id: 14,
+    name: 'INFINITY MAXI',
+    price: 1200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bodysuits',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['newArrivals'],
+    brand: 'Julimex',
+    colors: ['nude'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398056/9q4l54nqa6f1eagl6ax8yveg28vng6x5_tgtvbq.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398056/w5jures8tpy2bjgmb1x2ywowgjweql0g_w3wdbd.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398055/9itu9vesqn1hwk1bsryczjmxapkq00p8_tg634p.jpg'
+    ]
+  },
+  {
+    id: 15,
     name: 'INFINITY BOYSHORT MAXI',
-    price: 170,
+    price: 1200,
     isFavorite: false,
     category: 'underwear',
     subcategory: 'panties',
@@ -189,7 +257,7 @@ export const products = [
     ]
   },
   {
-    id: 10,
+    id: 16,
     name: 'INFINITY BOYSHORT MAXI',
     price: 170,
     isFavorite: false,
@@ -206,7 +274,7 @@ export const products = [
     ]
   },
   {
-    id: 11,
+    id: 17,
     name: 'INFINITY MAXI',
     price: 170,
     isFavorite: false,
@@ -222,7 +290,7 @@ export const products = [
     ]
   },
   {
-    id: 12,
+    id: 18,
     name: 'INFINITY MAXI',
     price: 170,
     isFavorite: false,

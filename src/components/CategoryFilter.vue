@@ -234,7 +234,7 @@ function resetCategoryFilter() {
 
 @media (max-width: 768px) {
     .nav-links {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -250,4 +250,6 @@ function resetCategoryFilter() {
         text-align: center;
     }
 }
+
+
 </style>

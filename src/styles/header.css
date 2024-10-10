@@ -137,10 +137,10 @@ button img {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--header-background);
+  background-color: var(--background-drawer);
   color: var(--header-text-color);
   width: auto;
-  height: 1150px;
+  height: 3060px;
   z-index: 5;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
@@ -196,6 +196,7 @@ button img {
 .burger-menu .line-1 {
   top: -8px;
 }
+
 
 .burger-menu .line-2 {
   top: 0;

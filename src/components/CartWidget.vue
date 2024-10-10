@@ -87,7 +87,7 @@ const generateInvoice = () => {
     border: 1px solid #ddd;
     padding: 10px;
     gap: 15px;
-    background-color: white;
+    background-color: var(--background-color);
     border-radius: 8px;
     transition: box-shadow 0.3s;
 }

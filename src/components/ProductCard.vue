@@ -29,7 +29,7 @@
                     <span v-for="size in product.sizes" :key="size" class="product-card__tag">{{ size }}</span>
                 </div>
                 <div class="product-card__colors">
-                    <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: color }"
+                    <span v-for="color in product.colors" :key="color" :style="{ backgroundColor: getColor(color) }"
                         class="product-card__color-circle"></span>
                 </div>
             </div>
@@ -54,8 +54,8 @@ import 'swiper/swiper-bundle.css';
 const props = defineProps({
     product: {
         type: Object,
-        required: true
-    }
+        required: true,
+    },
 });
 
 const emit = defineEmits(['toggleFavorite']);
@@ -99,6 +99,32 @@ onMounted(() => {
         isLoading.value = false;
     }, 700);
 });
+
+// Map of color names to valid CSS colors
+const colorMap = {
+    black: '#000000',
+    white: '#FFFFFF',
+    red: '#FF0000',
+    green: '#008000',
+    blue: '#0000FF',
+    nude: '#FAD6A5',
+    pink: '#FFC0CB',
+    beige: '#F5F5DC',
+    emerald: '#50C878',
+    powder: '#F0E0D6',
+    milky: '#FFFDD0',
+    jeans: '#5DADEC',
+    graphite: '#383838',
+    'pink pearl': '#E7ACCF',
+    flesh: '#FFE4C4',
+    gray: '#808080',
+    purple: '#800080',
+    // Add more mappings as needed
+};
+
+function getColor(colorName) {
+    return colorMap[colorName.toLowerCase()] || 'transparent';
+}
 </script>
 
 <style scoped>

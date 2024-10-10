@@ -51,7 +51,7 @@ defineProps({
 
 @media (max-width: 768px) {
     .pagination {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 

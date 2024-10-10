@@ -75,12 +75,12 @@ function search() {
     }
 
     .search-bar input {
-        width: 100%;
+        width: auto;
         margin-right: 0;
     }
 
     .search-bar button {
-        width: 100%;
+        width: auto;
     }
 }
 </style>
