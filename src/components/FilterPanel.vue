@@ -21,10 +21,10 @@
             <div class="color-palette">
                 <button v-for="color in availableColors" :key="color"
                     :class="{ 'active': localFilters.colors.includes(color) }" @click="toggleColor(color)"
-                    :style="{ backgroundColor: color }"></button>
+                    :style="{ backgroundColor: getColor(color) }"></button>
             </div>
         </div>
-        <div class="filter-section">
+        <div class="filter-section" v-if="availableSizes.length">
             <h3>{{ $t('size') }}</h3>
             <div class="button-list">
                 <button v-for="size in availableSizes" :key="size"
@@ -46,53 +46,79 @@ import { products } from '@/data/products';
 const props = defineProps({
     filters: {
         type: Object,
-        required: true
+        required: true,
     },
     maxPrice: {
         type: Number,
-        required: true
-    }
+        required: true,
+    },
 });
 
 const emits = defineEmits(['applyFilters', 'resetFilters']);
 
 const localFilters = ref({ ...props.filters });
 
-const availableBrands = computed(() => [...new Set(Object.values(products).flat().map(product => product.brand))]);
+const availableBrands = computed(() => [...new Set(products.map((product) => product.brand))]);
 
 const sizesByBrand = {
-    'Kris line': ['S', 'M', 'L', 'XL'],
-    'Subtille': ['S', 'M', 'L', 'XL'],
     'Esotiq': ['S', 'M', 'L', 'XL'],
     'Gorsenia': ['S', 'M', 'L', 'XL'],
-    'Gracija-Rim': ['S', 'M', 'L'],
-    'Kinga': ['S', 'M', 'L', 'XL'],
-    'Ysabel Mora': ['S', 'M', 'L', 'XL'],
     'Jolidon': ['S', 'M', 'L', 'XL'],
-    'Melle': ['S', 'M', 'L', 'XL'],
-    'Julimex': ['S', 'M', 'L', 'XL'],
-    'Novika': ['S', 'M', 'L', 'XL']
+    'Julimex': ['M', 'L', 'XL'],
+    'Kinga': ['M', 'L'],
+    'Kris line': ['S', 'M', 'L'],
+    'Melle': ['34', '36'],
+    'Novika': ['M', 'L'],
+    'Subtille': ['M', 'L', 'XL'],
+    'Ysabel Mora': ['One Size'],
+    'Gracija-Rim': ['70B', '70C', '70D', '75A', '75B', '75C', '75D', '80B', '80C', '80D', '85B', '85C'],
 };
 
 const colorsByBrand = {
-    'Kris line': ['black', 'white'],
-    'Subtille': ['blue', 'red'],
-    'Esotiq': ['pink', 'beige', 'emerald'],
-    'Gorsenia': ['black', 'gray'],
-    'Gracija-Rim': ['white', 'black'],
-    'Kinga': ['white', 'beige'],
-    'Ysabel Mora': ['black'],
-    'Jolidon': ['red', 'black'],
-    'Melle': ['black', 'powder', 'milky', 'jeans', 'green'],
+    'Esotiq': ['emerald'],
+    'Gorsenia': ['black'],
+    'Jolidon': ['black'],
     'Julimex': ['nude', 'black'],
-    'Novika': ['black', 'red', 'purple']
+    'Kinga': ['nude'],
+    'Kris line': ['black', 'white'],
+    'Melle': ['black', 'powder', 'graphite', 'milky', 'jeans', 'flesh', 'pink pearl', 'green'],
+    'Novika': ['white', 'beige'],
+    'Subtille': ['blue', 'red'],
+    'Ysabel Mora': ['white', 'black'],
+    'Gracija-Rim': ['black'],
 };
+
+// Map of color names to valid CSS colors
+const colorMap = {
+    black: '#000000',
+    white: '#FFFFFF',
+    red: '#FF0000',
+    green: '#008000',
+    blue: '#0000FF',
+    nude: '#FAD6A5',
+    pink: '#FFC0CB',
+    beige: '#F5F5DC',
+    emerald: '#50C878',
+    powder: '#F0E0D6',
+    milky: '#FFFDD0',
+    jeans: '#5DADEC',
+    graphite: '#383838',
+    'pink pearl': '#E7ACCF',
+    flesh: '#FFE4C4',
+    gray: '#808080',
+    purple: '#800080',
+    // Add more mappings as needed
+};
+
+function getColor(colorName) {
+    return colorMap[colorName.toLowerCase()] || 'transparent';
+}
 
 const availableSizes = computed(() => {
     const selectedBrands = localFilters.value.brands || [];
     let sizes = [];
 
-    selectedBrands.forEach(brand => {
+    selectedBrands.forEach((brand) => {
         sizes = sizes.concat(sizesByBrand[brand] || []);
     });
 
@@ -103,7 +129,7 @@ const availableColors = computed(() => {
     const selectedBrands = localFilters.value.brands || [];
     let colors = [];
 
-    selectedBrands.forEach(brand => {
+    selectedBrands.forEach((brand) => {
         colors = colors.concat(colorsByBrand[brand] || []);
     });
 
@@ -142,14 +168,18 @@ function resetFilters() {
         brands: [],
         priceRange: [0, props.maxPrice],
         colors: [],
-        sizes: []
+        sizes: [],
     };
     emits('resetFilters');
 }
 
-watch(localFilters, () => {
-    emits('applyFilters', localFilters.value);
-}, { deep: true });
+watch(
+    localFilters,
+    () => {
+        emits('applyFilters', localFilters.value);
+    },
+    { deep: true }
+);
 </script>
 
 <style scoped>
