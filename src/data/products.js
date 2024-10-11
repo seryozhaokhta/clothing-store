@@ -251,9 +251,9 @@ export const products = [
     brand: 'Julimex',
     colors: ['black'],
     images: [
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/114jv2vyuhkvfxxs067m23ls51p6f4i4.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/c89nm7zssrx8p00zp88vn68ephtk2co2.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/black/yw2im0jciaiodu2wwipnbjpccivv3fgk.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/114jv2vyuhkvfxxs067m23ls51p6f4i4_t5vawk.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/yw2im0jciaiodu2wwipnbjpccivv3fgk_o6pbwg.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398054/c89nm7zssrx8p00zp88vn68ephtk2co2_b6i9g9.jpg'
     ]
   },
   {
@@ -268,9 +268,9 @@ export const products = [
     brand: 'Julimex',
     colors: ['nude'],
     images: [
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/9itu9vesqn1hwk1bsryczjmxapkq00p8.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/9q4l54nqa6f1eagl6ax8yveg28vng6x5.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/BOYSHORT MAXI/flash/w5jures8tpy2bjgmb1x2ywowgjweql0g.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398056/9q4l54nqa6f1eagl6ax8yveg28vng6x5_tgtvbq.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398056/w5jures8tpy2bjgmb1x2ywowgjweql0g_w3wdbd.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398055/9itu9vesqn1hwk1bsryczjmxapkq00p8_tg634p.jpg'
     ]
   },
   {
@@ -285,8 +285,8 @@ export const products = [
     brand: 'Julimex',
     colors: ['black'],
     images: [
-      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/black/308xelgdx9mhsebiqhv7ld8jnk7782qm.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/black/hvmdulxgcpgbtts79qem43tu26ckujku.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398057/hvmdulxgcpgbtts79qem43tu26ckujku_so6ssy.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398057/308xelgdx9mhsebiqhv7ld8jnk7782qm_jj0da4.jpg'
     ]
   },
   {
@@ -301,14 +301,14 @@ export const products = [
     brand: 'Julimex',
     colors: ['nude'],
     images: [
-      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/flqb8w92hkqjadiglhs3ij7ndw9hpd7h.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/gahbxh8864v15rl8fozmi3daemd2luln.jpg',
-      '/src/assets/catalog/Julimex/INFINITY/panties/MAXI/flash/mn6dszy8xlw10szr9nc1ya4l5ralkar8.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398059/mn6dszy8xlw10szr9nc1ya4l5ralkar8_k7kqry.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398058/gahbxh8864v15rl8fozmi3daemd2luln_ozbamc.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398058/flqb8w92hkqjadiglhs3ij7ndw9hpd7h_lasurg.jpg'
     ]
   },
   // Kinga
   {
-    id: 13,
+    id: 19,
     name: '1127-SC SAND ECRU',
     price: 120,
     isFavorite: false,
@@ -323,7 +323,7 @@ export const products = [
     ]
   },
   {
-    id: 13,
+    id: 20,
     name: '11273-B SAND ECRU',
     price: 120,
     isFavorite: false,
@@ -339,7 +339,7 @@ export const products = [
   },
   // Kris line
   {
-    id: 14,
+    id: 21,
     name: 'Product 1',
     price: 100,
     isFavorite: false,
@@ -355,7 +355,7 @@ export const products = [
   },
   // Melle
   {
-    id: 15,
+    id: 22,
     name: 'DALILA',
     price: 250,
     isFavorite: false,
@@ -366,13 +366,13 @@ export const products = [
     brand: 'Melle',
     colors: ['black'],
     images: [
-      '/src/assets/catalog/Melle/DALILA/black/ML0611.jpg',
-      '/src/assets/catalog/Melle/DALILA/black/ML0611_2.jpg',
-      '/src/assets/catalog/Melle/DALILA/black/ML0611_3.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398105/ML0611_3_uv9w9p.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398103/ML0611_iko3dg.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398108/ML0611_2_cc50oi.jpg'
     ]
   },
   {
-    id: 16,
+    id: 23,
     name: 'EMMA',
     price: 250,
     isFavorite: false,
@@ -383,13 +383,13 @@ export const products = [
     brand: 'Melle',
     colors: ['powder'],
     images: [
-      '/src/assets/catalog/Melle/EMMA/powder/ML-1604-трусы-слип-с-высокой-талией_пудра(2).jpg',
-      '/src/assets/catalog/Melle/EMMA/powder/ML-1628-Debby+ML-1603-трусы-слип_пудра(3).jpg',
-      '/src/assets/catalog/Melle/EMMA/powder/ML-1628-Debby_пудра(3).jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398105/ML-1628-Debby_ML-1603-%D1%82%D1%80%D1%83%D1%81%D1%8B-%D1%81%D0%BB%D0%B8%D0%BF_%D0%BF%D1%83%D0%B4%D1%80%D0%B0_3_w52wqo.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398105/ML-1604-%D1%82%D1%80%D1%83%D1%81%D1%8B-%D1%81%D0%BB%D0%B8%D0%BF-%D1%81-%D0%B2%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B9-%D1%82%D0%B0%D0%BB%D0%B8%D0%B5%D0%B9_%D0%BF%D1%83%D0%B4%D1%80%D0%B0_2_l9vx5o.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398105/ML-1628-Debby_%D0%BF%D1%83%D0%B4%D1%80%D0%B0_3_hfqtzw.jpg'
     ]
   },
   {
-    id: 17,
+    id: 24,
     name: 'LILOU',
     price: 250,
     isFavorite: false,
@@ -400,13 +400,13 @@ export const products = [
     brand: 'Melle',
     colors: ['black'],
     images: [
-      '/src/assets/catalog/Melle/LILOU/black/Бюст ML0316_черн_1+ML0302_3.jpg',
-      '/src/assets/catalog/Melle/LILOU/black/Бюст ML0316_черн_1+ML0302_5.jpg',
-      '/src/assets/catalog/Melle/LILOU/black/Бюст ML0316_черн_3.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398109/%D0%91%D1%8E%D1%81%D1%82_ML0316_%D1%87%D0%B5%D1%80%D0%BD_3_toachh.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398112/%D0%91%D1%8E%D1%81%D1%82_ML0316_%D1%87%D0%B5%D1%80%D0%BD_1_ML0302_3_xr3mw9.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398108/%D0%91%D1%8E%D1%81%D1%82_ML0316_%D1%87%D0%B5%D1%80%D0%BD_1_ML0302_5_bld0ed.jpg'
     ]
   },
   {
-    id: 18,
+    id: 25,
     name: 'LOVE',
     price: 250,
     isFavorite: false,
@@ -417,13 +417,63 @@ export const products = [
     brand: 'Melle',
     colors: ['graphite'],
     images: [
-      '/src/assets/catalog/Melle/LOVE/graphite/Бюст Comfort ML 1115  + ML 1103 Слипы Трусы _ Графит (4).jpg',
-      '/src/assets/catalog/Melle/LOVE/graphite/Бюст Grazia ML 1114 + ML 1103 Слипы Трусы _ Графит (3).jpg',
-      '/src/assets/catalog/Melle/LOVE/graphite/Бюст Comfort ML 1115 _ Графит (3).jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398111/%D0%91%D1%8E%D1%81%D1%82_Comfort_ML_1115_ML_1103_%D0%A1%D0%BB%D0%B8%D0%BF%D1%8B_%D0%A2%D1%80%D1%83%D1%81%D1%8B___%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%82_4_baved0.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398113/%D0%91%D1%8E%D1%81%D1%82_Grazia_ML_1114_ML_1103_%D0%A1%D0%BB%D0%B8%D0%BF%D1%8B_%D0%A2%D1%80%D1%83%D1%81%D1%8B___%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%82_3_ds5wnk.jpg'
     ]
   },
   {
-    id: 19,
+    id: 26,
+    name: 'LOVE',
+    price: 250,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36'],
+    tags: ['newArrivals'],
+    brand: 'Melle',
+    colors: ['mikly'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398111/ML1103-%D1%81%D0%BB%D0%B8%D0%BF_%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_5_dj3mp3.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398111/ML1106-%D1%81%D0%BB%D0%B8%D0%BF-%D0%BC%D0%B8%D0%B4%D0%B8_%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_5_c8iixx.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398111/ML1115-Comfort_%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_10_idzowb.jpg'
+    ]
+  },
+  {
+    id: 27,
+    name: 'LOVE',
+    price: 250,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36'],
+    tags: ['newArrivals'],
+    brand: 'Melle',
+    colors: ['silver-powder'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398113/ML1116-Stella_%D1%81%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B8%D1%81%D1%82%D0%B0%D1%8F-%D0%BF%D1%83%D0%B4%D1%80%D0%B0_8_fghjcx.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398112/ML1116-Stella_%D1%81%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B8%D1%81%D1%82%D0%B0%D1%8F-%D0%BF%D1%83%D0%B4%D1%80%D0%B0_1_%D0%B1%D0%B0%D0%BD%D1%82%D0%B8%D0%BA_bmprs9.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398112/ML1115_Comfort_%D1%81%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B8%D1%81%D1%82%D0%B0%D1%8F_%D0%BF%D1%83%D0%B4%D1%80%D0%B0_1_zxpgqh.jpg'
+    ]
+  },
+  {
+    id: 28,
+    name: 'MADELEINE',
+    price: 250,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36'],
+    tags: ['newArrivals'],
+    brand: 'Melle',
+    colors: ['aqua'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398114/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0414_%D1%81%D0%BB%D0%B8%D0%BF_ML0403_acqua_1_rrnfn6.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398115/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0414_%D1%81%D0%BB%D0%B8%D0%BF_ML0403_acqua_2_fbmj0a.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398115/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0416_%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D0%BBML0402_acqua_2_looomk.jpg'
+    ]
+  },
+  {
+    id: 29,
     name: 'MADELEINE',
     price: 250,
     isFavorite: false,
@@ -434,13 +484,13 @@ export const products = [
     brand: 'Melle',
     colors: ['milky'],
     images: [
-      '/src/assets/catalog/Melle/MADELEINE/milky/Бюст ML0414+слип ML0403_мол_1.jpg',
-      '/src/assets/catalog/Melle/MADELEINE/milky/Бюст ML0414+слип ML0403_мол_4.jpg',
-      '/src/assets/catalog/Melle/MADELEINE/milky/Бюст ML0414+слип ML0403_мол_5.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398115/%D0%91%D1%8E%D1%81%D1%82_ML0414_%D1%81%D0%BB%D0%B8%D0%BF_ML0403_%D0%BC%D0%BE%D0%BB_1_vu6qkj.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398116/%D0%91%D1%8E%D1%81%D1%82_ML0414_%D1%81%D0%BB%D0%B8%D0%BF_ML0403_%D0%BC%D0%BE%D0%BB_4_urbia3.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398117/%D0%91%D1%8E%D1%81%D1%82_ML0414_%D1%81%D0%BB%D0%B8%D0%BF_ML0403_%D0%BC%D0%BE%D0%BB_5_zttrhc.jpg'
     ]
   },
   {
-    id: 20,
+    id: 30,
     name: 'NUANCE',
     price: 250,
     isFavorite: false,
@@ -449,15 +499,30 @@ export const products = [
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
-    colors: ['black', 'jeans'],
+    colors: ['black'],
     images: [
-      '/src/assets/catalog/Melle/NUANCE/black/Бюст ML0214_черн+ML0201_2.jpg',
-      '/src/assets/catalog/Melle/NUANCE/black/Бюст ML0214_черн+ML0201_3.jpg',
-      '/src/assets/catalog/Melle/NUANCE/black/Бюст ML0216_черн+ML0203_3.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82_ML0216_%D1%87%D0%B5%D1%80%D0%BD_ML0203_3_xu56oi.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398122/%D0%91%D1%8E%D1%81%D1%82_ML0214_%D1%87%D0%B5%D1%80%D0%BD_ML0201_3_vho3uh.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82_ML0214_%D1%87%D0%B5%D1%80%D0%BD_ML0201_2_fwflnf.jpg'
     ]
   },
   {
-    id: 21,
+    id: 31,
+    name: 'NUANCE',
+    price: 250,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36'],
+    tags: ['newArrivals'],
+    brand: 'Melle',
+    colors: ['jeans'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82_ML0216_%D0%B4%D0%B5%D0%BD%D0%B8%D0%BC_1_ohglmi.jpg'
+    ]
+  },
+  {
+    id: 32,
     name: 'PERFECT',
     price: 250,
     isFavorite: false,
@@ -466,15 +531,32 @@ export const products = [
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
-    colors: ['black', 'flesh'],
+    colors: ['black'],
     images: [
-      '/src/assets/catalog/Melle/PERFECT/black/Бюст-Dea-ML-0511-+-ML-0501-бразы_черный(4).jpg',
-      '/src/assets/catalog/Melle/PERFECT/black/Бюст-Luna-ML-0513-+-ML-0507-стринг_черный(1).jpg',
-      '/src/assets/catalog/Melle/PERFECT/black/Бюст-Luna-ML-0513-+-ML-0507-стринг_черный(2).jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82-Luna-ML-0513-_-ML-0507-%D1%81%D1%82%D1%80%D0%B8%D0%BD%D0%B3_%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_2_uz5bon.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82-Luna-ML-0513-_-ML-0507-%D1%81%D1%82%D1%80%D0%B8%D0%BD%D0%B3_%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_1_khxun4.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398120/%D0%91%D1%8E%D1%81%D1%82-Dea-ML-0511-_-ML-0501-%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_4_juzcbw.jpg'
     ]
   },
   {
-    id: 22,
+    id: 33,
+    name: 'PERFECT',
+    price: 250,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'bras',
+    sizes: ['34', '36'],
+    tags: ['newArrivals'],
+    brand: 'Melle',
+    colors: ['flesh'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398121/%D0%91%D1%8E%D1%81%D1%82_ML0519_%D1%81%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8__ML0507_%D0%B1%D0%B5%D0%B6_1_zni7gq.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398121/%D0%91%D1%8E%D1%81%D1%82_ML0519_%D1%81%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8__ML0507_%D0%B1%D0%B5%D0%B6_2_cj2s2e.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398121/%D0%91%D1%8E%D1%81%D1%82_ML0519_%D1%81%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8__ML0507_%D0%B1%D0%B5%D0%B6_3_dyrats.jpg'
+    ]
+  },
+  {
+    id: 34,
     name: 'SAMANTA',
     price: 250,
     isFavorite: false,
@@ -485,14 +567,14 @@ export const products = [
     brand: 'Melle',
     colors: ['pink pearl'],
     images: [
-      '/src/assets/catalog/Melle/SAMANTA/pink pearl/Бюст МL0111_роз.жемчуг_2.jpg',
-      '/src/assets/catalog/Melle/SAMANTA/pink pearl/Бюст МL0115+панти ML0105_роз.жемчуг_1.jpg',
-      '/src/assets/catalog/Melle/SAMANTA/pink pearl/Бюст МL0115+панти ML0105_роз.жемчуг_2.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398124/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0115_%D0%BF%D0%B0%D0%BD%D1%82%D0%B8_ML0105_%D1%80%D0%BE%D0%B7.%D0%B6%D0%B5%D0%BC%D1%87%D1%83%D0%B3_1_siihmb.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398124/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0115_%D0%BF%D0%B0%D0%BD%D1%82%D0%B8_ML0105_%D1%80%D0%BE%D0%B7.%D0%B6%D0%B5%D0%BC%D1%87%D1%83%D0%B3_2_cxannx.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398123/%D0%91%D1%8E%D1%81%D1%82_%D0%9CL0111_%D1%80%D0%BE%D0%B7.%D0%B6%D0%B5%D0%BC%D1%87%D1%83%D0%B3_2_hbgdel.jpg'
     ]
   },
   {
-    id: 23,
-    name: 'TRESOR',
+    id: 35,
+    name: 'TRASPARENZE',
     price: 250,
     isFavorite: false,
     category: 'underwear',
@@ -500,17 +582,17 @@ export const products = [
     sizes: ['34', '36'],
     tags: ['newArrivals'],
     brand: 'Melle',
-    colors: ['green'],
+    colors: ['black'],
     images: [
-      '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg',
-      '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg',
-      '/src/assets/catalog/Melle/TRESOR/1/Бюст ML0714+ML0703_зел_1.jpg'
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398137/%D0%91%D1%8E%D1%81%D1%82_Lucia_ML_0922_ML_0907_%D0%A1%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8_%D0%A2%D1%80%D1%83%D1%81%D1%8B_%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_nth1mo.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398139/%D0%91%D1%8E%D1%81%D1%82_Lucia_ML_0922_ML_0907_%D0%A1%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8_%D0%A2%D1%80%D1%83%D1%81%D1%8B_%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B5_ryq6xt.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725398132/%D0%91%D1%8E%D1%81%D1%82_Lucia_ML_0922_ML_0907_%D0%A1%D1%82%D1%80%D0%B8%D0%BD%D0%B3%D0%B8_%D0%A2%D1%80%D1%83%D1%81%D1%8B__%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_gkh3ju.jpg'
     ]
   },
   // Novika
   {
-    id: 24,
-    name: 'Product 13',
+    id: 36,
+    name: 'STARLING N',
     price: 180,
     isFavorite: false,
     category: 'underwear',
@@ -518,13 +600,16 @@ export const products = [
     sizes: ['M', 'L'],
     tags: ['newArrivals'],
     brand: 'Novika',
-    colors: ['white', 'beige'],
-    images: []
+    colors: ['white'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491814/awxq8gg0c1lbpy3aab4gqmxz928ack5q_cjncil.jpg',
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491814/0ribfe6i9z5abso91225lgoout58b0k2_dvb6ph.jpg'
+    ]
   },
   // Subtille
   {
-    id: 25,
-    name: 'Product 2',
+    id: 37,
+    name: 'ILONA Soft Full',
     price: 200,
     isFavorite: false,
     category: 'underwear',
@@ -532,13 +617,30 @@ export const products = [
     sizes: ['M', 'L', 'XL'],
     tags: ['sale', 'newArrivals'],
     brand: 'Subtille',
-    colors: ['blue', 'red'],
-    images: []
+    colors: ['blue'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491807/z6hfvr714ku9rtb01ee328rzzqkj36dh_of8zmh.jpg'
+    ]
+  },
+  {
+    id: 38,
+    name: 'ILONA',
+    price: 200,
+    isFavorite: false,
+    category: 'underwear',
+    subcategory: 'panties',
+    sizes: ['M', 'L', 'XL'],
+    tags: ['sale', 'newArrivals'],
+    brand: 'Subtille',
+    colors: ['blue'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491807/lrowdmd3hjl0qgj76cnbcftxuyc9ttn6_lozwnc.jpg'
+    ]
   },
   // Ysabel Mora
   {
-    id: 26,
-    name: 'Product 6',
+    id: 39,
+    name: 'High waist',
     price: 220,
     isFavorite: false,
     category: 'socks-and-accessories',
@@ -546,12 +648,14 @@ export const products = [
     sizes: ['One Size'],
     tags: [],
     brand: 'Ysabel Mora',
-    colors: ['white', 'black'],
-    images: []
+    colors: ['black'],
+    images: [
+      'https://res.cloudinary.com/du1uu7nev/image/upload/v1725491824/4a36na1xxfng3yd7iz9z2fkqeitt0smv_j0rmdh.jpg'
+    ]
   },
   // Gracija-Rim
   {
-    id: 27,
+    id: 40,
     name: 'ASSOL 10030',
     price: 9500,
     isFavorite: false,
