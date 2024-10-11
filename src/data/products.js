@@ -1,9 +1,11 @@
 // src/data/products.js
 
+import { v4 as uuidv4 } from 'uuid'
+
 export const products = [
   // Esotiq
   {
-    id: 1,
+    id: uuidv4(),
     name: 'KORIN',
     price: 3900,
     isFavorite: false,
@@ -19,7 +21,7 @@ export const products = [
     ]
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: 'KORIN',
     price: 3900,
     isFavorite: false,
@@ -35,7 +37,7 @@ export const products = [
     ]
   },
   {
-    id: 3,
+    id: uuidv4(),
     name: 'KORIN',
     price: 1800,
     isFavorite: false,
@@ -52,7 +54,7 @@ export const products = [
   },
   // Gorsenia
   {
-    id: 4,
+    id: uuidv4(),
     name: 'Gorsenia',
     price: 180,
     isFavorite: false,
@@ -69,7 +71,7 @@ export const products = [
   },
   // Jolidon
   {
-    id: 5,
+    id: uuidv4(),
     name: 'S2360 NEG',
     price: 160,
     isFavorite: false,
@@ -86,7 +88,7 @@ export const products = [
     ]
   },
   {
-    id: 6,
+    id: uuidv4(),
     name: 'S2360 NEG',
     price: 160,
     isFavorite: false,
@@ -104,7 +106,7 @@ export const products = [
   },
   // Julimex
   {
-    id: 7,
+    id: uuidv4(),
     name: 'SIMPLE бюст',
     price: 3200,
     isFavorite: false,
@@ -121,7 +123,7 @@ export const products = [
     ]
   },
   {
-    id: 8,
+    id: uuidv4(),
     name: 'SIMPLE бюст',
     price: 3200,
     isFavorite: false,
@@ -138,7 +140,7 @@ export const products = [
     ]
   },
   {
-    id: 9,
+    id: uuidv4(),
     name: 'INFINITY TOP бюст',
     price: 3200,
     isFavorite: false,
@@ -155,7 +157,7 @@ export const products = [
     ]
   },
   {
-    id: 10,
+    id: uuidv4(),
     name: 'INFINITY TOP бюст',
     price: 3200,
     isFavorite: false,
@@ -172,7 +174,7 @@ export const products = [
     ]
   },
   {
-    id: 11,
+    id: uuidv4(),
     name: 'INFINITY TOP SOFT бюст',
     price: 3200,
     isFavorite: false,
@@ -189,7 +191,7 @@ export const products = [
     ]
   },
   {
-    id: 12,
+    id: uuidv4(),
     name: 'INFINITY TOP SOFT бюст',
     price: 3200,
     isFavorite: false,
@@ -206,7 +208,7 @@ export const products = [
     ]
   },
   {
-    id: 13,
+    id: uuidv4(),
     name: 'INFINITY MAXI',
     price: 1200,
     isFavorite: false,
@@ -223,7 +225,7 @@ export const products = [
     ]
   },
   {
-    id: 14,
+    id: uuidv4(),
     name: 'INFINITY MAXI',
     price: 1200,
     isFavorite: false,
@@ -240,7 +242,7 @@ export const products = [
     ]
   },
   {
-    id: 15,
+    id: uuidv4(),
     name: 'INFINITY BOYSHORT MAXI',
     price: 1200,
     isFavorite: false,
@@ -257,7 +259,7 @@ export const products = [
     ]
   },
   {
-    id: 16,
+    id: uuidv4(),
     name: 'INFINITY BOYSHORT MAXI',
     price: 170,
     isFavorite: false,
@@ -274,7 +276,7 @@ export const products = [
     ]
   },
   {
-    id: 17,
+    id: uuidv4(),
     name: 'INFINITY MAXI',
     price: 170,
     isFavorite: false,
@@ -290,7 +292,7 @@ export const products = [
     ]
   },
   {
-    id: 18,
+    id: uuidv4(),
     name: 'INFINITY MAXI',
     price: 170,
     isFavorite: false,
@@ -308,7 +310,7 @@ export const products = [
   },
   // Kinga
   {
-    id: 19,
+    id: uuidv4(),
     name: '1127-SC SAND ECRU',
     price: 120,
     isFavorite: false,
@@ -323,7 +325,7 @@ export const products = [
     ]
   },
   {
-    id: 20,
+    id: uuidv4(),
     name: '11273-B SAND ECRU',
     price: 120,
     isFavorite: false,
@@ -339,7 +341,7 @@ export const products = [
   },
   // Kris line
   {
-    id: 21,
+    id: uuidv4(),
     name: 'Product 1',
     price: 100,
     isFavorite: false,
@@ -355,7 +357,7 @@ export const products = [
   },
   // Melle
   {
-    id: 22,
+    id: uuidv4(),
     name: 'DALILA',
     price: 250,
     isFavorite: false,
@@ -372,7 +374,7 @@ export const products = [
     ]
   },
   {
-    id: 23,
+    id: uuidv4(),
     name: 'EMMA',
     price: 250,
     isFavorite: false,
@@ -389,7 +391,7 @@ export const products = [
     ]
   },
   {
-    id: 24,
+    id: uuidv4(),
     name: 'LILOU',
     price: 250,
     isFavorite: false,
@@ -406,7 +408,7 @@ export const products = [
     ]
   },
   {
-    id: 25,
+    id: uuidv4(),
     name: 'LOVE',
     price: 250,
     isFavorite: false,
@@ -422,7 +424,7 @@ export const products = [
     ]
   },
   {
-    id: 26,
+    id: uuidv4(),
     name: 'LOVE',
     price: 250,
     isFavorite: false,
@@ -439,7 +441,7 @@ export const products = [
     ]
   },
   {
-    id: 27,
+    id: uuidv4(),
     name: 'LOVE',
     price: 250,
     isFavorite: false,
@@ -456,7 +458,7 @@ export const products = [
     ]
   },
   {
-    id: 28,
+    id: uuidv4(),
     name: 'MADELEINE',
     price: 250,
     isFavorite: false,
@@ -473,7 +475,7 @@ export const products = [
     ]
   },
   {
-    id: 29,
+    id: uuidv4(),
     name: 'MADELEINE',
     price: 250,
     isFavorite: false,
@@ -490,7 +492,7 @@ export const products = [
     ]
   },
   {
-    id: 30,
+    id: uuidv4(),
     name: 'NUANCE',
     price: 250,
     isFavorite: false,
@@ -507,7 +509,7 @@ export const products = [
     ]
   },
   {
-    id: 31,
+    id: uuidv4(),
     name: 'NUANCE',
     price: 250,
     isFavorite: false,
@@ -522,7 +524,7 @@ export const products = [
     ]
   },
   {
-    id: 32,
+    id: uuidv4(),
     name: 'PERFECT',
     price: 250,
     isFavorite: false,
@@ -539,7 +541,7 @@ export const products = [
     ]
   },
   {
-    id: 33,
+    id: uuidv4(),
     name: 'PERFECT',
     price: 250,
     isFavorite: false,
@@ -556,7 +558,7 @@ export const products = [
     ]
   },
   {
-    id: 34,
+    id: uuidv4(),
     name: 'SAMANTA',
     price: 250,
     isFavorite: false,
@@ -573,7 +575,7 @@ export const products = [
     ]
   },
   {
-    id: 35,
+    id: uuidv4(),
     name: 'TRASPARENZE',
     price: 250,
     isFavorite: false,
@@ -591,7 +593,7 @@ export const products = [
   },
   // Novika
   {
-    id: 36,
+    id: uuidv4(),
     name: 'STARLING N',
     price: 180,
     isFavorite: false,
@@ -608,7 +610,7 @@ export const products = [
   },
   // Subtille
   {
-    id: 37,
+    id: uuidv4(),
     name: 'ILONA Soft Full',
     price: 200,
     isFavorite: false,
@@ -623,7 +625,7 @@ export const products = [
     ]
   },
   {
-    id: 38,
+    id: uuidv4(),
     name: 'ILONA',
     price: 200,
     isFavorite: false,
@@ -639,7 +641,7 @@ export const products = [
   },
   // Ysabel Mora
   {
-    id: 39,
+    id: uuidv4(),
     name: 'High waist',
     price: 220,
     isFavorite: false,
@@ -655,7 +657,7 @@ export const products = [
   },
   // Gracija-Rim
   {
-    id: 40,
+    id: uuidv4(),
     name: 'ASSOL 10030',
     price: 9500,
     isFavorite: false,
